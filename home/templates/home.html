@@ -1,3 +1,9 @@
-{%extends 'layout/base.html'%} {%block content%}
-<h1>HOME</h1>
-{%endblock%}
+{% extends 'layout/base.html' %} 
+{% load static %}
+
+{% block content %}
+
+<div>
+<img src="{% static 'img/hero_image.jpg' %}" alt="Mug Blue Staffy Hero Image" class="hero-image">
+</div>
+{% endblock %}
