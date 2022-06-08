@@ -6,3 +6,21 @@
 .hero-image {
     width: 100%;
 }
+
+/*Footer style*/
+.footer {
+    background-color: #3D405B;
+    padding: 10px;
+}
+
+.footer a {
+    color: #E07A5F;
+    font-size: 1.7rem;
+    padding: 0.4rem;
+    border-right: 1px solid var(--accent-gold);
+    transition: all .5s ease;
+  }
+  .footer a:hover {
+    color: white;
+  }
+
