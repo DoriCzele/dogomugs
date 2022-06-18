@@ -3,19 +3,21 @@
 <!--Navbar -->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div>
-        <img src="{% static '/img/logo.png' %}" alt="Logo" class="logo">
-    </div>
     <div class="container-fluid">
-        <!--Navbar Logo -->
-        
-        <!--Navbar buttons-->
+      <div class="row">
+        <div class="d-lg-none col-3">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    </div>
+      <!--Navbar Logo -->
+      <div class="col-9 col-md-4">
+      <img src="{% static '/img/logo.png' %}" alt="Logo" class="logo">
+    </div>
+        <!--Navbar buttons-->
+      <div class="collapse navbar-collapse col-md-8" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+          <li class="nav-item no-break">
             <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-house-fill"></i>
                 Home</a>
           </li>
@@ -38,14 +40,23 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
+          {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Account</a>
+            <a class="nav-link" href="#">My Account</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="#">Basket</a>
           </li>
         </ul>
-  
+      </div>
       </div>
     </div>
   </nav>
