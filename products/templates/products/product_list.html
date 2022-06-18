@@ -1,0 +1,18 @@
+{% extends "layout/base.html" %}
+{% block content %}
+	{% if object_list|length > 0 %}
+	{% for product in object_list %}
+		{% if product.active is True and product.quantity > 0 %}
+		<p>{{ product.name }}</p>
+		<p>{{ product.description }}</p>
+		<p>{{ product.price }}</p>
+		<p>Quantity: {{ product.quantity }}</p>
+		<a href="/products/{{product.id}}/">
+			<img src="{{MEDIA_URL}}{{ product.image.url }}">
+		</a>
+		{% endif %}
+	{% endfor %}
+	{% else %}
+	<p>There are currently no products to show, please come back later!</p>
+	{% endif %}
+{% endblock %}
