@@ -21,6 +21,16 @@
     transition: all .5s ease;
   }
   .footer a:hover {
-    color: white;
+    color: #F4F1DE;
   }
 
+.form-container{
+    width: 70%;
+}
+
+.btn-primary{
+    background-color: #3D405B;
+    color: #F4F1DE;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
