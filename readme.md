@@ -23,6 +23,7 @@ At the time of submission of this project the deployed version is identical to t
   - [Table of contents](#table-of-contents)
   - [User Experience](#user-experience)
     - [Target Audience](#target-audience)
+    - [User Goal](#user-goal)
 
 ## User Experience
 
@@ -31,3 +32,12 @@ At the time of submission of this project the deployed version is identical to t
 - Potential buyers of current product range of mugs and bottles featuring dog themed designs.
 - Customers looking for practical and quality gifts for dog lovers.
 - Dog lovers searching for products with designs of dogs.
+
+### User Goal
+* A web-shop containing products of bottles and mugs with dog themed designs.
+* A fully responsive website that is accessible and easy to use on desktop, tablet & mobile.
+* Appealing, modern and clear design.
+* Visibility of products in my basket, and an easy way to edit, delete or pay for these items.
+* Providing option to share products on social media.
+* Direct links to social media sites.
+
