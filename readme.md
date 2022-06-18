@@ -24,6 +24,7 @@ At the time of submission of this project the deployed version is identical to t
   - [User Experience](#user-experience)
     - [Target Audience](#target-audience)
     - [User Goal](#user-goal)
+    - [User Stories](#user-stories)
 
 ## User Experience
 
@@ -40,4 +41,20 @@ At the time of submission of this project the deployed version is identical to t
 * Visibility of products in my basket, and an easy way to edit, delete or pay for these items.
 * Providing option to share products on social media.
 * Direct links to social media sites.
+
+### User Stories
+
+Key requirements of site users:
+
+* As a new user, I want to be able to create my own account.
+* As an existing user, I want to be able to log in to my account.
+* As an existing user, I want to be able to update my account details if required.
+* As a user browsing products, I want to be able to easily navigate on the products page.
+* As a user interested in a particular product or design, I want to be able to search for items.
+* As a user interested in the business, I want to be able to find information about the company.
+* As a user purchasing an item, I want to be able to see the content of my basket, alter quantities or remove products from my cart.
+* As a user finalising a purchase, I want to be able to provide my shipping information.
+* As a user finalising a purchase, I want to be able to securely pay for my purchase.
+* As a user with finalised purchase I want to be able to view my ordered products.
+* As a user, I want to be able to share Dog O Mugs on social media.
 
