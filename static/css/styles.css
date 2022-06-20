@@ -24,17 +24,16 @@
     color: #F4F1DE;
   }
 
-.form-container{
-    width: 70%;
-}
-
-.btn-primary{
+.btn-primary {
     background-color: #3D405B;
     color: #F4F1DE;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    transition-duration: 0.3s;
 }
-
+.btn-primary:hover {
+    background-color: #E07A5F;
+}
 .no-break {
     white-space: nowrap;
 }
