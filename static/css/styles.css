@@ -37,3 +37,8 @@
 .no-break {
     white-space: nowrap;
 }
+
+.form-box {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
