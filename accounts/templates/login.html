@@ -10,21 +10,30 @@
 	<div class="row">
 		<div class="col">
 			<div class="d-flex p-2 bd-highlight justify-content-center">
-	<h2>Log in</h2>
+				<h2>Log in</h2>
 			</div>
 		</div>
 	</div>
-<div class="row">
-	
-<div class="col">
-	<div class="d-flex p-2 bd-highlight justify-content-center">
-<form method="POST">
+
+	<div class="row">
+		<div class="col">
+			<div class="d-flex p-2 bd-highlight justify-content-center">
+				<p>Don't have an account yet? You can <a href="/account/register">register</a> here!</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">	
+		<div class="col">
+			<div class="d-flex p-2 bd-highlight justify-content-center">
+			<form method="POST">
 {% csrf_token %}
 {{ form|crispy }}
 <button type="submit" class="btn btn-primary">Login</button>
-</form>
-</div>
-</div>
-</div>
+			</form>
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}

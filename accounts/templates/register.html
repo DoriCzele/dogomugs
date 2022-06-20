@@ -7,20 +7,29 @@
 	<div class="row">
 		<div class="col">
 			<div class="d-flex p-2 bd-highlight justify-content-center">
-	<h2>Register</h2>
+				<h2>Register</h2>
 			</div>
 		</div>
 	</div>
-		<div class="row">
+
+	<div class="row">
 		<div class="col">
 			<div class="d-flex p-2 bd-highlight justify-content-center">
-<form method="POST">
-	{% csrf_token %}
-{{ form|crispy }}
-<button type="submit" class="btn btn-primary position-relative">Register</button>
-</form>
-</div>
-</div>
-</div>
+				<p>Already have an account? You can <a href="/account/login">log in</a> here!</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<div class="d-flex p-2 bd-highlight justify-content-center">
+				<form method="POST">
+				{% csrf_token %}
+				{{ form|crispy }}
+				<button type="submit" class="btn btn-primary position-relative">Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}
