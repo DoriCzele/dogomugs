@@ -30,7 +30,10 @@
 			<form method="POST">
 {% csrf_token %}
 {{ form|crispy }}
+<div class="col">
+	<div class="d-flex p-2 bd-highlight justify-content-center">
 <button type="submit" class="btn btn-primary">Login</button>
+</div></div>
 			</form>
 			</div>
 		</div>
