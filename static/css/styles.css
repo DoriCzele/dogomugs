@@ -30,7 +30,7 @@
 
 .btn-primary{
     background-color: #3D405B;
-    color: #F4F1DE;
+    color: #ffff;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -47,7 +47,10 @@
     padding-bottom: 2%;
     display: flex;
    justify-content: space-between;
-
    flex-wrap: wrap;
+}
 
+.details-card {
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
