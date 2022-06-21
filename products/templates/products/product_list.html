@@ -1,15 +1,17 @@
 {% extends "layout/base.html" %}
 {% block content %}
 	{% if object_list|length > 0 %}
+	<div class="container-fluid">
+		<div class="row">
 	{% for product in object_list %}
 		{% if product.active is True and product.quantity > 0 %}
-		<div class="container-fluid">
-		<div class="row justify-content-evenly">
-			<div class="col-sm-6">
-				<div class="card product-card" style="width: 18rem;">
+			<div class="col-xs-12 col-sm-6 col-md-4 d-flex justify-content-center">
+				<div class="card product-card">
+					<div>
 					<a href="/products/{{product.id}}/">
 					<img src="{{MEDIA_URL}}{{ product.image.url }}" class="card-img-top">
 					</a>
+				</div>
 						<div class="card-body">
 						<h5>{{ product.name }}</h5>
 						</div>
@@ -20,10 +22,10 @@
 					<button type="submit" class="btn btn-primary">Add to basket</button>
 				</div>
 			</div>
+			{% endif %}
+			{% endfor %}
 		</div>
-		</div>
-	{% endif %}
-	{% endfor %}
+	</div>
 	{% else %}
 	<p>There are currently no products to show, please come back later!</p>
 	{% endif %}
