@@ -30,14 +30,14 @@
               <li><a class="dropdown-item" href="#">Travel Mugs</a></li>
               <li><a class="dropdown-item" href="#">Bottles</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">All Products</a></li>
+              <li><a class="dropdown-item" href="{% url 'product-list' %}">All Products</a></li>
             </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <form action="{% url 'product-list' %}" method="get" class="d-flex">
+            <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" value="{{ request.GET.search }}">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
           {% if user.is_authenticated %}
