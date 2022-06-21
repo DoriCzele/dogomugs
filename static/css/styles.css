@@ -38,3 +38,16 @@
 .no-break {
     white-space: nowrap;
 }
+
+.product-card {
+    border: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+   justify-content: space-between;
+
+   flex-wrap: wrap;
+
+}
