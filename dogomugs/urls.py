@@ -18,8 +18,9 @@ from django.urls import path
 from django.urls.conf import include
 from django.conf.urls.static import static
 from django.conf import settings
-from home import urls as home_urls
 from accounts import urls as account_urls
+from basket import urls as basket_urls
+from home import urls as home_urls
 from products import urls as product_urls
 
 
@@ -27,5 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(home_urls)),
     path('account/', include(account_urls)),
-    path('products/', include(product_urls))
+    path('products/', include(product_urls)),
+    path('basket/', include(basket_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
