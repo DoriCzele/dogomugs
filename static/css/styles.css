@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
 .logo {
     width: 40%;
     margin-left: 2.5%;
@@ -30,13 +32,13 @@
 }
 
 .footer a {
-    color: #E07A5F;
+    color: #F4F1DE;
     font-size: 1.7rem;
     padding: 0.4rem;
     transition: all .5s ease;
   }
   .footer a:hover {
-    color: #F4F1DE;
+    color: #E07A5F ;
   }
 .product-card {
     border: 0;
@@ -53,4 +55,39 @@
 .details-card {
     margin-top: 5%;
     margin-bottom: 5%;
+}
+
+.btn-primary {
+    float: right;
+    background-color: #3D405B;
+    color: #F4F1DE;
+    width: 50%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition-duration: 0.3s;
+}
+.btn-primary:hover {
+    background-color: #E07A5F;
+}
+.no-break {
+    white-space: nowrap;
+}
+
+.form-box {
+    margin-top: 2%;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-image {
+    width: 100%;
+}
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
 }
