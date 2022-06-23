@@ -27,7 +27,7 @@ from products import urls as product_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(home_urls)),
-    path('account/', include(account_urls)),
+    path('accounts/', include(account_urls)),
     path('products/', include(product_urls)),
     path('basket/', include(basket_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from products.models import Product
 
 
+@login_required
 def basket(request):
     basket = request.session.get(
         "basket", {"basket_contents": [], "basket_price": 0})
