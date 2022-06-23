@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
+body {
+    margin-bottom: 5rem;
+}
+
 .logo {
     width: 40%;
     margin-left: 2.5%;
@@ -11,13 +15,6 @@
 
 .form-container{
     width: 70%;
-}
-
-.btn-primary{
-    background-color: #3D405B;
-    color: #ffff;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
 }
 
 .no-break {
@@ -58,19 +55,12 @@
 }
 
 .btn-primary {
-    float: right;
     background-color: #3D405B;
-    color: #F4F1DE;
-    width: 50%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    color: #ffff;
     transition-duration: 0.3s;
 }
 .btn-primary:hover {
     background-color: #E07A5F;
-}
-.no-break {
-    white-space: nowrap;
 }
 
 .form-box {
@@ -94,4 +84,8 @@ p {
 
 .fa-brands{
     color: #ffff;
+}
+
+.shopping-bag-container{
+    margin-top: 5%;
 }

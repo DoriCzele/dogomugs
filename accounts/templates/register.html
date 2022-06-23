@@ -24,7 +24,9 @@
 							<form method="POST">
 							{% csrf_token %}
 							{{ form|crispy }}
-							<button type="submit" class="btn btn-primary">Register</button>
+							<div class="d-flex justify-content-center">
+								<button type="submit" class="btn btn-primary mt-3">Register</button>
+							</div>
 						</form>
 						</div>
 				
