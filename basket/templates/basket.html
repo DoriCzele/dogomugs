@@ -1,14 +1,48 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-	{% if products|length > 0 %}
-	{% for product in products %}
-	<p>{{ product.quantity }} X {{ product.name }} @ {{product.price}}</p>
-	{% endfor %}
-	<p>{{ request.session.basket.basket_price }}</p>
-	{% else %}
-	<p>Your cart is empty</p>
-	{% endif %}
 
+<div class="container shopping-bag-container">
+    <h2>SHOPPING BAG</h2>
+
+{% if products|length > 0 %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in products %}
+      <tr>
+        <td><a href="{% url 'product-detail' pk=product.id %}">{{ product.name }}</a></td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.price }}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <th scope="col">Total</th>
+        <td></td>
+        <td>{{request.session.basket.basket_price}}</td>
+        </tr>
+
+    </tbody>
+  </table>
+{% endif %}
 </div>
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-xs-10 col-sm-6 offset-md-4 col-md-4 offset-xl-6 col-xl-3">
+      <button type="button" class="btn btn-primary w-100 my-1" href="{% url 'product-list' %}" rel="noopener"
+      aria-label="Keep shopping">KEEP SHOPPING</button>
+    </div>
+    <div class="col-xs-10 col-sm-6 col-md-4 col-xl-3">
+        <button type="button" class="btn btn-primary no-break w-100 my-1">SECURE CHECKOUT <i class="fa-solid fa-lock"></i></button>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

@@ -10,7 +10,7 @@ def basket(request):
     item_ids = [item["id"] for item in basket_items]
 
     products = list(Product.objects.filter(
-        id__in=item_ids).values("id", "name", "price"))
+        id__in=item_ids).values("id", "name", "price", "image"))
 
     for product in products:
         # Cast decimal to string for render
