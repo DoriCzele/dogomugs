@@ -12,7 +12,8 @@
     </div>
       <!--Navbar Logo -->
       <div class="col-9 col-md-4">
-      <img src="{% static '/img/logo.png' %}" alt="Logo" class="logo">
+        <a class="nav-link active" 
+        aria-current="page" href="{% url 'home' %}"><img src="{% static '/img/logo.png' %}" alt="Logo" class="logo"> </a>
     </div>
         <!--Navbar buttons-->
       <div class="collapse navbar-collapse col-md-8" id="navbarSupportedContent">
@@ -20,7 +21,7 @@
           <li class="nav-item no-break">
             <a class="nav-link active" 
             aria-current="page" 
-            href="#">
+            href="{% url 'home' %}">
             <i class="fa-solid fa-house"></i>
                 Home</a>
           </li>
@@ -39,10 +40,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li>
-          <form action="{% url 'product-list' %}" method="get" class="d-flex">
-            <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" value="{{ request.GET.search }}">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
           {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="#">My Account</a>
@@ -56,7 +53,7 @@
         </li>
         {% endif %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Basket</a>
+            <a class="nav-link" href="{% url 'basket' %}"><i class="fa-solid fa-basket-shopping"></i></a>
           </li>
         </ul>
       </div>
