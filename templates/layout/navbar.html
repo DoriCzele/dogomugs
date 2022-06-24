@@ -23,36 +23,36 @@
             aria-current="page" 
             href="{% url 'home' %}">
             <i class="fa-solid fa-house"></i>
-                Home</a>
+                HOME</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Products
+              PRODUCTS
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Mugs</a></li>
-              <li><a class="dropdown-item" href="#">Travel Mugs</a></li>
-              <li><a class="dropdown-item" href="#">Bottles</a></li>
+              <li><a class="dropdown-item" href="#">CERAMIC MUGS</a></li>
+              <li><a class="dropdown-item" href="#">CAMPING MUGS</a></li>
+              <li><a class="dropdown-item" href="#">WATER BOTTLES</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{% url 'product-list' %}">All Products</a></li>
+              <li><a class="dropdown-item" href="{% url 'product-list' %}">ALL PRODUCTS</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">INFO</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">My Account</a>
+            <a class="nav-link" href="#">MY ACCOUNT</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'basket' %}"><i class="fa-solid fa-basket-shopping"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            <a class="nav-link" href="{% url 'logout' %}">LOG OUT</a>
           </li>
           {% else %}
           <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a>
+          <a class="nav-link" href="{% url 'login' %}">LOG IN</a>
         </li>
         {% endif %}
         </ul>
