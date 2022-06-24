@@ -26,7 +26,6 @@ body {
     white-space: nowrap;
 }
 
-
 /*Footer style*/
 .footer {
     background-color: #3D405B;
@@ -39,8 +38,8 @@ body {
     padding: 0.4rem;
     transition: all .5s ease;
   }
-  
-  .footer a:hover {
+
+  .footer a :hover {
     color: #E07A5F ;
   }
 
@@ -96,3 +95,11 @@ p {
 .shopping-bag-container{
     margin-top: 5%;
 }
+
+.search-button {
+    border-color: #E07A5F;
+    color: #E07A5F;
+}
+.search-button :hover {
+    color: #E07A5F ;
+  }
