@@ -25,7 +25,7 @@
 			 			<li class="list-group-item">{{ product.price }}</li>
 			  			<li class="list-group-item">In stock: {{ product.quantity }}</li>
 					</ul>
-					<button type="submit" class="btn btn-primary">ADD TO BASKET</button>
+					<a type="button" class="btn btn-primary my-1" href="{% url 'product-detail' pk=product.id %}">MORE...</a>
 				</div>
 			</div>
 			{% endif %}
