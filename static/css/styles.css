@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
+.free-delivery-banner {
+    background-color: #E07A5F;
+    color: #ffff;
+}
+
 body {
     margin-bottom: 5rem;
 }
@@ -34,9 +39,11 @@ body {
     padding: 0.4rem;
     transition: all .5s ease;
   }
+  
   .footer a:hover {
     color: #E07A5F ;
   }
+
 .product-card {
     border: 0;
     padding-left: 2%;
