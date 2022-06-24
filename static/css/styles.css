@@ -69,6 +69,16 @@ body {
     background-color: #E07A5F;
 }
 
+.fa-solid {
+    background-color: #ffff;
+    color:  #3D405B;
+    transition-duration: 0.3s;
+}
+
+.fa-solid :hover{
+    background-color: #E07A5F;
+}
+
 .form-box {
     margin-top: 2%;
     font-family: 'Poppins', sans-serif;
