@@ -79,6 +79,11 @@ body {
     background-color: #E07A5F;
 }
 
+.lock-icon{
+    color: #ffff;
+    background-color: #3D405B; !important
+}
+
 .form-box {
     margin-top: 2%;
     font-family: 'Poppins', sans-serif;
