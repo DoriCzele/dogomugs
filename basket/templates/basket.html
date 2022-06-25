@@ -5,6 +5,8 @@
     <h2>YOUR BASKET</h2>
 
 {% if products|length > 0 %}
+<form method="post" action="{% url 'modify-existing-items' %}">
+  {% csrf_token %}
 <table class="table">
     <thead>
       <tr>
@@ -17,18 +19,27 @@
       {% for product in products %}
       <tr>
         <td><a href="{% url 'product-detail' pk=product.id %}" class="text-decoration-none link-dark">{{ product.name }}</a></td>
-        <td>{{ product.quantity }}</td>
+        <td><input
+          class="form-control"
+          type="number"
+          min="0"
+          max="{{ product.max_quantity }}"
+          name="quantity-product-{{product.id}}"
+          value="{{ product.quantity }}"></td>
         <td>{{ product.price }}</td>
       </tr>
       {% endfor %}
       <tr>
         <th scope="col">Total</th>
         <td></td>
-        <td>{{request.session.basket.basket_price}}</td>
+        <td>{{ basket_price }}</td>
         </tr>
-
+        <tr>
+        </tr>
     </tbody>
   </table>
+  <button class="btn btn-primary" type="submit">Save changes</button>
+</form>
 {% endif %}
 </div>
 
@@ -36,8 +47,8 @@
 <div class="container">
     <div class="row">
     <div class="col-xs-10 col-sm-6 offset-md-4 col-md-4 offset-xl-6 col-xl-3">
-      <button type="button" class="btn btn-primary w-100 my-1" href="{% url 'product-list' %}" rel="noopener"
-      aria-label="Keep shopping">KEEP SHOPPING</button>
+      <a type="button" class="btn btn-primary w-100 my-1" href="{% url 'product-list' %}" rel="noopener"
+      aria-label="Keep shopping">KEEP SHOPPING</a>
     </div>
     <div class="col-xs-10 col-sm-6 col-md-4 col-xl-3">
         <button type="button" class="btn btn-primary no-break w-100 my-1">SECURE CHECKOUT <i class="fa-solid fa-lock lock-icon"></i></button>

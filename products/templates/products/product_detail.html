@@ -11,11 +11,11 @@
 		  <h5 class="card-title">{{ product.name }}</h5>
 		  <p class="card-text">{{ product.description }}</p>
 		  <p>{{ product.price }}</p>
-		  <p>Currently on stock: {{ product.quantity }}</p>
+		  <p>Currently in stock: {{ product.quantity }}</p>
 		 
 		  <a type="button" class="btn btn-primary" href="{% url 'product-list' %}" rel="noopener"
 		  aria-label="Back to products">BACK</a>
-		  <button type="submit" class="btn btn-primary">ADD TO BASKET</button>
+		  <a href="{% url 'add-basket-item' product.pk 1 %}" type="submit" class="btn btn-primary">ADD TO BASKET</a>
 		  
 	</div>
 	  </div>
