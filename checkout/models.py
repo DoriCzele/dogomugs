@@ -4,7 +4,7 @@ from products.models import Product
 
 
 class ShippingAddress(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=100, null=False, blank=False)
     primary_address = models.CharField(max_length=50, null=False, blank=False)
     secondary_address = models.CharField(
