@@ -25,6 +25,7 @@ At the time of submission of this project the deployed version is identical to t
     - [Target Audience](#target-audience)
     - [User Goal](#user-goal)
     - [User Stories](#user-stories)
+    - [Site owners Goals](#site-owners-goals)
 
 ## User Experience
 
@@ -57,4 +58,21 @@ Key requirements of site users:
 * As a user finalising a purchase, I want to be able to securely pay for my purchase.
 * As a user with finalised purchase I want to be able to view my ordered products.
 * As a user, I want to be able to share Dog O Mugs on social media.
+* As a user, I want a secure checkout and safe payment system.
+* As a user, I want my details kept confident at all times.
+
+### Site owners Goals
+
+* As a site owner, I want to promote my products the best way possible to attract new customers.
+* As a site owner, I want to increase profit by reaching a wider audience.
+* As a site owner, I want to be able to overview and process orders.
+* As a site owner, I want to be able to provide customers with an easily accessible clear e-commerce site with a simple flow to increase user experience while shopping.
+* As a site owner, I want new customers to be able to register and create an account.
+* As a site owner, I want existing customers to be able to return and log into their account.
+* As a site owner, I want information about the company and products to be available for customers.
+* As a site owner, I want customers to be able to contact us through the website.
+* As a site owner, I want to be able to review and update stock levels through the admin site.
+* As a site owner, I want to be able to add new products through the admin site.
+* As a site owner, I want to be able to modify existing product name, description or price through the admin site.
+* As a site owner, I want the payment system to be secure and reliable.
 
