@@ -52,8 +52,8 @@
     </span>
 </div>
 	{% elif "search=" in request.get_full_path %}
-	<p>No products were found that match your search query.</p>
+	<div class="container justify-content-center"><p>No products were found that match your search query.</p></div>
 	{% else %}
-	<p>There are currently no products to show, please come back later!</p>
+	<div class="container justify-content-center"><p>There are currently no products to show, please come back later!</p></div>
 	{% endif %}
 {% endblock %}
