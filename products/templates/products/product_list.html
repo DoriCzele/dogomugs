@@ -4,7 +4,7 @@
 	<div class="row">
 		<form action="{% url 'product-list' %}" method="get" class="d-flex my-2">
 			<input name="search" class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" value="{{ request.GET.search }}">
-			<button class="btn btn-outline-success search-button" type="submit">SEARCH</button>
+			<button class="btn search-button" type="submit">SEARCH</button>
 		</form>
 	</div>
 	</div>
@@ -27,7 +27,7 @@
 			 			<li class="list-group-item">{{ product.price }}</li>
 			  			<li class="list-group-item">In stock: {{ product.quantity }}</li>
 					</ul>
-					<a type="button" class="btn btn-primary my-1" href="{% url 'product-detail' pk=product.id %}">MORE...</a>
+					<a type="button" class="btn btn-primary my-1" href="{% url 'product-detail' pk=product.id %}">PRODUCT DETAILS</a>
 				</div>
 			</div>
 			{% endif %}

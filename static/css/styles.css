@@ -115,6 +115,7 @@ p {
     border-color: #E07A5F;
     color: #E07A5F;
 }
-.search-button :hover {
-    color: #E07A5F ;
-  }
+.search-button:hover {
+    color: #ffff; 
+    background-color: #E07A5F ; 
+  } 
