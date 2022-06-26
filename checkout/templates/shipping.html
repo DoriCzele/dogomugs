@@ -1,11 +1,29 @@
+
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 {% load crispy_forms_tags %}
-<div class="container">
-<form method="POST">
-	{% csrf_token %}
-	{{ form|crispy }}
-	<div class="d-flex float-end">
-	<button type="submit" class="btn btn-primary mt-2">Submit</button>
+
+
+<div class="container justify-content-center">
+	<h3 class="text-center my-3">CUSTOMER DETAILS</h3>
 </div>
+
+<!--Shipping form-->
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 float-left">
+			<img src="{% static 'img/dog_and_mug.jpg' %}" alt="Dog with a mug" class="dog-and-mug float-left">
+		</div>
+		<div class="col-md-6 float-end">
+		<form method="POST">
+		{% csrf_token %}
+		{{ form|crispy }}
+			<div class="d-flex float-end">
+			<button type="submit" class="btn btn-primary mt-2 mb-2">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 {% endblock %}
