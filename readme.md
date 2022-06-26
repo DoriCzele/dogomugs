@@ -26,6 +26,12 @@ At the time of submission of this project the deployed version is identical to t
     - [User Goal](#user-goal)
     - [User Stories](#user-stories)
     - [Site owners Goals](#site-owners-goals)
+    - [Design Choices](#design-choices)
+    - [Colours](#colours)
+    - [Structure](#structure)
+    - [Logo](#logo)
+    - [Fonts](#fonts)
+    - [Icons](#icons)
 
 ## User Experience
 
@@ -80,3 +86,35 @@ Key requirements of site users:
 * As a site owner, I want to be able to modify existing product name, description or price through the admin site.
 * As a site owner, I want the payment system to be secure and reliable.
 
+[Back to Top](#table-of-contents)
+
+### Design Choices
+
+The website's main functionality is to sell mugs and bottles featuring designs of dogs. The design choices are clear and simple directing the user's attention to the products. The website is featuring some bold colours while keeping the flow clear and simple for customers. 
+
+### Colours
+
+![Colour Scheme](../Milestone%20Project%204/static/img/colour_palette.png)
+
+The colour palette was created via [Coolors](https://coolors.co/ "Coolors.co")
+
+* #FFFFFF: The background of the overall website is white in order achieve a clean and modern look. 
+* #3D405B: This color is used in buttons and footer to create contrast.
+* #E07A5F: This colour is used as a feature colour to draw attention to different sections and highlight active buttons.
+### Structure
+
+The website's structure was created with the use of [Bootstrap 5](https://getbootstrap.com/) to ensure compatibility across various devices.
+
+### Logo
+
+The cupcake logo was created via [Looka](https://looka.com/ "Looka.com").
+
+### Fonts
+
+Fonts are customised via [Google Fonts](https://fonts.google.com)
+
+### Icons
+Icons are implemented from [Fontawesome](https://fontawesome.com)
+Fav icons are created via [Favicon](https://favicon.io/favicon-generator/) 
+
+[Back to Top](#table-of-contents)
