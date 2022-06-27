@@ -12,10 +12,10 @@
 <!--Shipping form-->
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 float-left">
-			<img src="{% static 'img/dog_and_mug.jpg' %}" alt="Dog with a mug" class="dog-and-mug float-left">
+		<div class="col-md-6">
+			<img src="{% static 'img/dog_and_mug.png' %}" alt="Dog with a mug" class="w-100">
 		</div>
-		<div class="col-md-6 float-end">
+		<div class="col-md-6">
 		<form method="POST">
 		{% csrf_token %}
 		{{ form|crispy }}
