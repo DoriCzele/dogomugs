@@ -1,4 +1,4 @@
-from checkout.forms import ShippingForm
+from checkout.forms import ShippingForm, PaymentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import FormView
 from django.forms import model_to_dict
@@ -39,5 +39,7 @@ class ShippingFormView(LoginRequiredMixin, FormView):
         return super(ShippingFormView, self).form_valid(form)
 
 
-def payment_view(request):
-    return render(request, "payment.html")
+class PaymentFormView(LoginRequiredMixin, FormView):
+    template_name = "payment.html"
+    form_class = PaymentForm
+    success_url = reverse_lazy("home")
