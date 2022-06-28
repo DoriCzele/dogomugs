@@ -5,17 +5,17 @@
     color: #ffff;
 }
 
+.nav-icon {
+    font: 6rem;
+}
+
+
 body {
     margin-bottom: 5rem;
 }
 
 .logo {
     width: 40%;
-    margin-left: 2.5%;
-}
-
-.hero-image {
-    width: 100%;
 }
 
 .form-container{
@@ -39,7 +39,7 @@ body {
     transition: all .5s ease;
   }
 
-  .footer a :hover {
+.footer a :hover {
     color: #E07A5F ;
   }
 
@@ -81,7 +81,7 @@ body {
 
 .lock-icon{
     color: #ffff;
-    background-color: #3D405B; !important
+    background-color: #3D405B;
 }
 
 .form-box {
@@ -117,4 +117,16 @@ p {
 }
 .search-button :hover {
     color: #E07A5F ;
+  }
+
+.btn-carousel {
+    background-color: #E07A5F;
+    color: #ffff;
+    font-size: 2rem;
+    width: 50%;
+  }
+
+.btn-carousel:hover {
+    background-color: #ea5e38;
+    color: #ffff;
   }
