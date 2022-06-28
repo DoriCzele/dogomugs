@@ -29,3 +29,17 @@ Arrows navigating to the next and previous images are positioned and displayed c
 * Footer icons are displayed in the correct position and size. Icons color changes on hover over. Social media icons navigating to the correct links and displaying on a new window.
 * Logo image is displayed in the correct position on all views and devices. Logo image navigates to home page on click.
 
+
+## Products page
+
+#### Tested items
+* Product cards
+* Buttons
+* Pagination
+
+#### Conclusion
+* Product cards are displayed in a clear and organised way across all devices. In the preview the product name, price and current stock level is displayed for each item.
+* The details button displayed clearly in the correct position and highlights on hover over. On each card the details button navigates to a detailed view of the chosen product. 
+* Due to the pagination implemented, 6 product items are displayed per page across all devices. Pages are numbered and the active page number displayed on the bottom of the page. Pages are navigated via the left and right arrows on the bottom of the page.
+
+
