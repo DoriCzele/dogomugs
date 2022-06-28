@@ -6,11 +6,10 @@
 <div class="container form-box justify-content-center">
 	<div class="card mb-3 border-0">
 		<div class="row">
-		  <div class="col">
-			<img src="/static/img/tote_bag_on_woman.jpg" class="rounded-start form-image" alt="Woman with tote bag">
-		  </div>
-		  
-		  <div class="col-md-6">
+			<div class="col">
+				<img src="/static/img/tote_bag_on_woman.jpg" class="rounded-start form-image" alt="Woman with tote bag">
+			</div>
+			<div class="col-md-6">
 				<div class="row">
 					<div class="card-body form-box">
 						<div class="d-flex p-2 bd-highlight">
@@ -21,18 +20,18 @@
 						</div>
 						<div class="d-flex p-2 bd-highlight">
 							<form method="POST">
-							{% csrf_token %}
-							{{ form|crispy }}
-							<div class="d-flex float-end">
-							<button type="submit" class="btn btn-primary mt-2">LOG IN</button>
-						</div>
+								{% csrf_token %}
+								{{ form|crispy }}
+								<div class="d-flex float-end">
+									<button type="submit" class="btn btn-primary mt-2">Log in</button>
+								</div>
 							</form>
 						</div>
 					</div>
-				</div>			
+				</div>
 			</div>
 		</div>
-	</div>		  
+	</div>
 </div>
-			
+
 {% endblock %}

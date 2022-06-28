@@ -1,59 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="container shopping-bag-container">
-    <h2>YOUR BASKET</h2>
-
-{% if products|length > 0 %}
-<form method="post" action="{% url 'modify-existing-items' %}">
-  {% csrf_token %}
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for product in products %}
-      <tr>
-        <td><a href="{% url 'product-detail' pk=product.id %}" class="text-decoration-none link-dark">{{ product.name }}</a></td>
-        <td><input
-          class="form-control"
-          type="number"
-          min="0"
-          max="{{ product.max_quantity }}"
-          name="quantity-product-{{product.id}}"
-          value="{{ product.quantity }}"></td>
-        <td>{{ product.price }}</td>
-      </tr>
-      {% endfor %}
-      <tr>
-        <th scope="col">Total</th>
-        <td></td>
-        <td>{{ basket_price }}</td>
+  <h2 class="text-uppercase">Your basket</h2>
+  {% if products|length > 0 %}
+  <form method="post" action="{% url 'modify-existing-items' %}">
+    {% csrf_token %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+        <tr>
+          <td><a href="{% url 'product-detail' pk=product.id %}"
+              class="text-decoration-none link-dark">{{ product.name }}</a></td>
+          <!-- Quantity number selector -->
+          <td><input class="form-control" type="number" min="0" max="{{ product.max_quantity }}"
+              name="quantity-product-{{product.id}}" value="{{ product.quantity }}"></td>
+          <td>{{ product.price }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <th scope="col">Total</th>
+          <td></td>
+          <td>{{ basket_price }}</td>
         </tr>
         <tr>
         </tr>
-    </tbody>
-  </table>
-  <button class="btn btn-primary" type="submit">Save changes</button>
-</form>
-{% endif %}
+      </tbody>
+    </table>
+    <button class="btn btn-primary" type="submit">Save changes</button>
+  </form>
+  {% endif %}
 </div>
-
-
 <div class="container">
-    <div class="row">
+  <div class="row">
     <div class="col-xs-10 col-sm-6 offset-md-4 col-md-4 offset-xl-6 col-xl-3">
-      <a type="button" class="btn btn-primary w-100 my-1" href="{% url 'product-list' %}" rel="noopener"
-      aria-label="Keep shopping">KEEP SHOPPING</a>
+      <a type="button" class="btn btn-primary w-100 my-1 text-uppercase" href="{% url 'product-list' %}" rel="noopener"
+        aria-label="Keep shopping">Keep shopping</a>
     </div>
     <div class="col-xs-10 col-sm-6 col-md-4 col-xl-3">
-        <button type="button" class="btn btn-primary no-break w-100 my-1">SECURE CHECKOUT <i class="fa-solid fa-lock lock-icon"></i></button>
-        </div>
+      <button type="button" class="btn btn-primary no-break w-100 my-1 text-uppercase">Secure checkout<i
+          class="fa-solid fa-lock lock-icon ps-2"></i></button>
     </div>
+  </div>
 </div>
-
 {% endblock %}

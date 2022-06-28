@@ -3,10 +3,20 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 
-from .forms import RegisterForm
+from accounts.forms import RegisterForm
 
 
 def register(request):
+    """View to handle user registration form submission.
+
+    Page only visible to non-authenticated users.
+    Display register template with embedded form on the GET request.
+    On form POST, check data validity against model.
+    If form data is valid:
+    - Create new model instance
+    - Log the user in
+    - Redirect to homepage
+    """
     if request.user.is_authenticated:
         return redirect("home")
     form = RegisterForm()
@@ -20,6 +30,16 @@ def register(request):
 
 
 def login(request):
+    """View to handle user login form submission.
+
+    Page only visible to non-authenticated users.
+    Display login template with embedded form on the GET request.
+    On form POST, check data validity against model.
+    If form data is valid:
+    - Check user credentials against credentials stored in database
+    - Log the user in
+    - Redirect to homepage
+    """
     if request.user.is_authenticated:
         return redirect("home")
     form = AuthenticationForm()
@@ -38,5 +58,10 @@ def login(request):
 
 
 def logout(request):
+    """View to log the user out.
+
+    Remove the user session cookie on request.
+    Redirect to the homepage.
+    """
     auth.logout(request)
     return redirect("home")

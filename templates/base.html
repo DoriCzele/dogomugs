@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% include "layout/head.html" %}
-  </head>
 
-  <body>
-    <div class="container-fluid">
-      <div class ="row text-center">
-          <h5 class="free-delivery-banner">FREE DELIVERY ON ALL ORDERS!</h5>
-      </div>
+<head>
+  {% include "layout/head.html" %}
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row text-center">
+      <h5 class="free-delivery-banner text-uppercase">Free delivery on all orders!</h5>
     </div>
-    <noscript
-      >JavaScript must be enabled in your browser to view this
-      website.</noscript>
-    {% include "layout/navbar.html" %} 
-    {%block content%} {%endblock%} 
-    {% include "layout/footer.html" %}
-    {% include "layout/scripts.html" %}
+  </div>
+  <noscript>JavaScript must be enabled in your browser to view this
+    website.</noscript>
+  {% include "layout/navbar.html" %}
+  {% block content %}
+  {% endblock %}
+  {% include "layout/footer.html" %}
+  {% include "layout/scripts.html" %}
+</body>
 
-  </body>
 </html>

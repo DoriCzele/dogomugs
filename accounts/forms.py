@@ -9,6 +9,7 @@ class RegisterForm(UserCreationForm):
     email = forms.EmailField()
 
     def clean_email(self):
+        """Check required for email field to ensure unique value."""
         email = self.cleaned_data.get("email")
         if User.objects.filter(email=email).exists():
             raise ValidationError(
@@ -18,11 +19,3 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "email", "password1", "password2"]
-
-
-# class LoginForm(AuthenticationForm):
-#     """Form fields for Login form."""
-
-#     class Meta:
-#         model = User
-#         fields = ["username", "password1"]

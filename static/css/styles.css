@@ -61,6 +61,7 @@ body {
 }
 
 .btn-primary {
+    text-transform: uppercase;
     background-color: #3D405B;
     color: #ffff;
     transition-duration: 0.3s;

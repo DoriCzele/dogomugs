@@ -3,24 +3,21 @@
 <div class="container details-card">
 	<div class="card border-0">
 		<div class="row g-0">
-		  <div class="col-md-4">
-			<img src="{{MEDIA_URL}}{{ product.image.url }}" class="img-fluid rounded-start" alt="Product image">
-		  </div>
-		<div class="col-md-4">
-	<div class="card-body border-0">
-		  <h5 class="card-title">{{ product.name }}</h5>
-		  <p class="card-text">{{ product.description }}</p>
-		  <p>{{ product.price }}</p>
-		  <p>Currently in stock: {{ product.quantity }}</p>
-		  <a type="button" class="btn btn-primary" href="{% url 'product-list' %}" rel="noopener"
-		  aria-label="Back to products">BACK</a>
-		  <a href="{% url 'add-basket-item' product.pk 1 %}" type="submit" class="btn btn-primary">ADD TO BASKET</a>
-		  
-	</div>
-	  </div>
-	</div>
+			<div class="col-md-4">
+				<img src="{{MEDIA_URL}}{{ product.image.url }}" class="img-fluid rounded-start" alt="Product image">
+			</div>
+			<div class="col-md-4">
+				<div class="card-body border-0">
+					<h5 class="card-title">{{ product.name }}</h5>
+					<p class="card-text">{{ product.description }}</p>
+					<p>{{ product.price }}</p>
+					<p>Currently in stock: {{ product.quantity }}</p>
+					<a type="button" class="btn btn-primary" href="{% url 'product-list' %}" rel="noopener"
+						aria-label="Back to products">Back</a>
+					<a href="{% url 'add-basket-item' product.pk 1 %}" type="submit" class="btn btn-primary">Add to basket</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-  
-
 {% endblock %}

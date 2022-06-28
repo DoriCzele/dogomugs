@@ -2,6 +2,7 @@ from products.models import Product
 
 
 def basket_context(request):
+    """Provide basket details in a context."""
     basket_price = 0
     total_items = 0
     basket = request.session.get("basket", [])
@@ -9,15 +10,20 @@ def basket_context(request):
     for item in basket:
         if int(item["quantity"]) > 0:
             try:
+                # Get relevant active product that has quantity greater than zero
                 product = Product.objects.get(
                     id=item["id"], active=True, quantity__gt=0)
                 if product is not None:
+                    # Increment basket price by total price of additional item
                     basket_price += product.price * int(item["quantity"])
+                    # Increment total items count by item
                     total_items += int(item["quantity"])
             except Product.DoesNotExist:
+                # Remove item from the basket
                 basket.pop(item)
                 continue
 
+    # Set basket session variable to new basket
     request.session["basket"] = basket
 
     return {

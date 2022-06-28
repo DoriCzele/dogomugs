@@ -6,10 +6,19 @@ from products.models import Product
 
 @login_required
 def basket(request):
+    """View to calculate and display basket template.
+
+    Get the basket from the session if it exists.
+    Check the stock availability of the items in the basket:
+    If lower than quantity in basket - set basket quantity to max available.
+    Pass product item information in products context.
+    """
     basket = request.session.get(
         "basket", [])
+    # Get item IDs from basket, store in item_ids variable
     item_ids = [item["id"] for item in basket]
 
+    # Create list of stock products values
     products = list(Product.objects.filter(
         id__in=item_ids).values("id", "name", "price", "image", "quantity"))
 
@@ -18,16 +27,18 @@ def basket(request):
         product["price"] = str(product["price"])
         for index, item in enumerate(basket):
             if product["id"] == item["id"]:
+                # Available quantities of stock items check
                 product["max_quantity"] = product["quantity"]
                 if product["max_quantity"] >= item["quantity"]:
                     product["quantity"] = item["quantity"]
                 else:
                     item["quantity"] = product["max_quantity"]
 
-    return render(request, 'basket.html', {"products": products})
+    return render(request, "basket.html", {"products": products})
 
 
 def add_basket_item(request, item_id=None, item_quantity=None):
+    """Add an individual item to the basket."""
     basket = request.session.get("basket", [])
     # Get item to insert into basket
     if item_id is None:
@@ -43,6 +54,12 @@ def add_basket_item(request, item_id=None, item_quantity=None):
 
 
 def modify_existing_items(request):
+    """Add/modify multiple items in the basket.
+
+    Get target item IDs and quantities from the request.
+    Iterate over target items with handler and store resulting basket in
+    the basket session variable.
+    """
     basket = request.session.get("basket", [])
     # Get items to modify within basket
     items_quantities = []
@@ -66,9 +83,11 @@ def modify_existing_items(request):
 
 
 def amend_basket_item(basket, item_id, item_quantity):
+    """Modify the basket, adding new item or editing existing."""
     already_exists_in_basket = False
     if item_id is not None and item_quantity is not None:
         for basket_item in basket:
+            # Check if item already exists in basket
             if int(item_id) == basket_item["id"]:
                 already_exists_in_basket = True
                 # Modify existing item

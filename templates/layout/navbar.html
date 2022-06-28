@@ -1,63 +1,62 @@
 {% load static %}
-
 <!--Navbar -->
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top ">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="d-lg-none col-3">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="d-lg-none col-3">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
       <!--Navbar Logo -->
       <div class="col-9 col-md-4">
-        <a class="nav-link active" 
-        aria-current="page" href="{% url 'home' %}"><img src="{% static '/img/logo.png' %}" alt="Logo" class="logo"> </a>
-    </div>
-        <!--Navbar buttons-->
+        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><img src="{% static '/img/logo.png' %}"
+            alt="Logo" class="logo"> </a>
+      </div>
+      <!--Navbar buttons-->
       <div class="collapse navbar-collapse col-md-8" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item no-break">
-            <a class="nav-link" 
-            aria-current="page" 
-            href="{% url 'home' %}">
-            <i class="fa-solid fa-house"></i>
-                HOME</a>
+            <a class="nav-link text-uppercase" aria-current="page" href="{% url 'home' %}">
+              <i class="fa-solid fa-house"></i>
+              Home</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-             </i>PRODUCTS
+            <a class="nav-link dropdown-toggle text-uppercase" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              </i>Products
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">CERAMIC MUGS</a></li>
-              <li><a class="dropdown-item" href="#">CAMPING MUGS</a></li>
-              <li><a class="dropdown-item" href="#">WATER BOTTLES</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{% url 'product-list' %}">ALL PRODUCTS</a></li>
+              <li><a class="dropdown-item text-uppercase" href="#">Ceramic Mugs</a></li>
+              <li><a class="dropdown-item text-uppercase" href="#">Camping Mugs</a></li>
+              <li><a class="dropdown-item text-uppercase" href="#">Water Bottles</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-uppercase" href="{% url 'product-list' %}">All products</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">INFO</a>
+            <a class="nav-link text-uppercase" href="#">Info</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">MY ACCOUNT</a>
+            <a class="nav-link text-uppercase" href="#">My account</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'basket' %}"><i class="fa-solid fa-basket-shopping"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">LOG OUT</a>
+            <a class="nav-link text-uppercase" href="{% url 'logout' %}">Log out</a>
           </li>
           {% else %}
           <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">LOG IN</a>
-        </li>
-        {% endif %}
+            <a class="nav-link text-uppercase" href="{% url 'login' %}">Log in</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
-      </div>
     </div>
-  </nav>
-
+  </div>
+</nav>
