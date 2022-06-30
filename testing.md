@@ -48,5 +48,17 @@ Arrows navigating to the next and previous images are positioned and displayed c
 * The search bar is only displayed on the Products page. Search button displayed and functioning as expected. If product search doesn't return a result "No products were found that match your search query." message shows. 
 * When product category is selected, only products that are filtered to the category are shown on the page.
 
+## Product Details page
 
+#### Items tested
+* Buttons
+* Text areas
+* Product image
 
+#### Conclusion
+* Back button displayed and styled as expected, driving user back to the Products page.
+* Add to basket button displayed and functioning as expected, adding the product to the basket and driving user to the Basket page.
+* The product name, description, price and current stock level is shown correctly on the detailed view and information is up to date.
+* Product image is displayed correctly across all devices.
+
+## Info page
