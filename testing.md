@@ -62,3 +62,17 @@ Arrows navigating to the next and previous images are positioned and displayed c
 * Product image is displayed correctly across all devices.
 
 ## Info page
+## Basket page
+
+#### Items tested
+* Basket contents and functions
+* Buttons
+
+#### Conclusion
+* All buttons are displayed and functioning as expected.
+* All items of the basket are listed, displaying the product name, chosen quantity and unit price.
+* The quantity field can be successfully updated manually or via the up and down arrows within the quantity field.
+* The changed quantity is saved and updated via the Save changes button.
+* The total order value and required payment is correctly displayed in the Total row.
+* Keep shopping button is leading customers back to Products.
+* Secure checkout button is leading customers to the Shipping form. 
