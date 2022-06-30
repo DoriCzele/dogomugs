@@ -16,7 +16,7 @@ Tested across various browsers: Google Chrome, Safari, Firefox.
 
 ## Home page
 
-#### Tested items
+#### Items tested
 * Carousel images 
 * Navbar
 * Footer
@@ -32,14 +32,21 @@ Arrows navigating to the next and previous images are positioned and displayed c
 
 ## Products page
 
-#### Tested items
+#### Items tested
 * Product cards
 * Buttons
 * Pagination
-
+* Category filter
+* Search bar
+* Product images
 #### Conclusion
-* Product cards are displayed in a clear and organised way across all devices. In the preview the product name, price and current stock level is displayed for each item.
+* Product cards are displayed in a clear and organised way across all devices. In the preview the product image, name, price and current stock level is displayed for each item.
+* When clicking on a product's image it navigates user to the detailed product view.
 * The details button displayed clearly in the correct position and highlights on hover over. On each card the details button navigates to a detailed view of the chosen product. 
 * Due to the pagination implemented, 6 product items are displayed per page across all devices. Pages are numbered and the active page number displayed on the bottom of the page. Pages are navigated via the left and right arrows on the bottom of the page.
+* When clicking on any categories from the Products dropdown it filters to the chosen products only, displaying those on the page.
+* The search bar is only displayed on the Products page. Search button displayed and functioning as expected. If product search doesn't return a result "No products were found that match your search query." message shows. 
+* When product category is selected, only products that are filtered to the category are shown on the page.
+
 
 
