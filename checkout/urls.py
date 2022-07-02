@@ -1,8 +1,8 @@
 from django.urls import path
-from checkout.views import ShippingFormView, PaymentFormView
+from checkout.views import ShippingFormView, PaymentView
 
 urlpatterns = [
     path('shipping/', ShippingFormView.as_view(),
          name='shipping-form'),
-    path('payment/', PaymentFormView.as_view(), name="payment")
+    path('payment/', PaymentView.as_view(), name="payment")
 ]

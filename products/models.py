@@ -11,8 +11,13 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        ordering = ("-created",)
-
     def __str__(self):
         return self.name
+
+    def sufficient_stock(self, basket_item_quantity):
+        if self.quantity < basket_item_quantity or self.active is False:
+            return False
+        return True
+
+    class Meta:
+        ordering = ("-created",)
