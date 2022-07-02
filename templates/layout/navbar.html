@@ -41,7 +41,7 @@
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link text-uppercase" href="#">My account</a>
+            <a class="nav-link text-uppercase" href="{% url 'order-list' %}">My orders</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'basket' %}"><i class="fa-solid fa-basket-shopping"></i></a>
