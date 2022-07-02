@@ -11,6 +11,7 @@ class ProductListView(list.ListView):
 
     model = Product
     paginate_by = 6
+    template_name = "product_list.html"
 
     def get(self, request, *args, **kwargs):
         """Override get method to ensure search param is not empty."""
@@ -40,3 +41,4 @@ class ProductDetailView(detail.DetailView):
     """Render a detail view of the Product model instance."""
 
     model = Product
+    template_name = "product_detail.html"
