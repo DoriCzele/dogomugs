@@ -33,6 +33,7 @@ class OrderDetails(models.Model):
         decimal_places=2, max_digits=8, default=0)
     items_quantity = models.IntegerField(null=False, blank=False, default=0)
     payment_confirmed = models.BooleanField(default=False)
+    stripe_id = models.CharField(max_length=100)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
