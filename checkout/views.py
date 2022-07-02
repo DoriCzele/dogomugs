@@ -121,7 +121,6 @@ class PaymentSuccessView(View):
             order.payment_confirmed = True
             order.save()
         else:
-            # TODO: redirect to orders page (when created)
-            return redirect("basket")
+            return redirect("order-list")
 
         return(render(request, "payment_success.html"))
