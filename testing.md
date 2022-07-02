@@ -62,6 +62,19 @@ Arrows navigating to the next and previous images are positioned and displayed c
 * Product image is displayed correctly across all devices.
 
 ## Info page
+
+#### Items tested
+* Text areas
+* 
+
+#### Conclusion
+
+## My Account page
+
+#### Items tested
+
+#### Conclusion
+
 ## Basket page
 
 #### Items tested
@@ -76,3 +89,26 @@ Arrows navigating to the next and previous images are positioned and displayed c
 * The total order value and required payment is correctly displayed in the Total row.
 * Keep shopping button is leading customers back to Products.
 * Secure checkout button is leading customers to the Shipping form. 
+
+## Shipping page
+#### Items tested
+* Shipping form
+* Buttons
+
+#### Conclusion
+
+## Payment page
+#### Items tested
+
+#### Conclusion
+
+## Log in page
+
+#### Items tested
+
+#### Conclusion
+
+## Register page
+#### Items tested
+
+#### Conclusion
