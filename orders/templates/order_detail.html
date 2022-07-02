@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<p><a href="{% url 'order-list' %}">All orders</a></p>
+<p>Total price: £{{orderdetails.total_price}}</p>
+<p>{{orderdetails.items_quantity}} items total</p>
+{% for order_item in orderdetails.orderitems_set.all %}
+<p>{{ order_item.product.name }}</p>
+<p>Quantity: {{ order_item.quantity }}</p>
+<p>£{{ order_item.price }} each</p>
+<img src="{{ order_item.product.image.url }}"/>
+{% endfor %}
+{% endblock %}

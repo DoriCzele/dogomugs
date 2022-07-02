@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+{% if object_list|length > 0 %}
+{% for order in object_list %}
+<p>£{{order.total_price}}</p>
+{% if order.items_quantity > 1 %}
+<p>{{order.items_quantity}} items</p>
+{% else %}
+<p>{{order.items_quantity}} item</p>
+{% endif %}
+<p>{{order.payment_confirmed}}</p>
+<p>{{order.shippingaddress.primary_address}}</p>
+<p>{{order.shippingaddress.postcode}}</p>
+<a href="{% url 'order-detail' pk=order.id %}">See order details</a>
+{% endfor %}
+{% else %}
+<p>There are no orders to display</p>
+{% endif %}
+{% endblock %}
+<!-- Needs pagination, like in product_list -->
