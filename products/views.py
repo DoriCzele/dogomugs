@@ -17,12 +17,13 @@ class ProductListView(list.ListView):
         return super().get(request, *args, **kwargs)
 
     def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(quantity__gt=0)
         search_string = self.request.GET.get("search", None)
         if search_string:
-            product_list_queryset = Product.objects.filter(
+            queryset = queryset.filter(
                 name__icontains=search_string)
-            return product_list_queryset
-        return super().get_queryset()
+        return queryset
 
 
 class ProductDetailView(detail.DetailView):
