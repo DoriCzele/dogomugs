@@ -30,15 +30,9 @@
 					</ul>
 					<a type="button" class="btn btn-primary my-1" href="{% url 'product-detail' pk=product.id %}">PRODUCT DETAILS</a>
 				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">{{ product.price }}</li>
-					<li class="list-group-item">In stock: {{ product.quantity }}</li>
-				</ul>
-				<a type="button" class="btn btn-primary my-1" href="{% url 'product-detail' pk=product.id %}">More...</a>
 			</div>
-		</div>
-		{% endif %}
-		{% endfor %}
+			{% endif %}
+			{% endfor %}
 	</div>
 </div>
 <div class="pagination justify-content-center my-1">
