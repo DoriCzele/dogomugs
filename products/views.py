@@ -23,12 +23,13 @@ class ProductListView(list.ListView):
 
     def get_queryset(self):
         """Override get_queryset to enable search Product filtering."""
+        queryset = super().get_queryset()
+        queryset = queryset.filter(quantity__gt=0)
         search_string = self.request.GET.get("search", None)
         if search_string:
-            product_list_queryset = Product.objects.filter(
+            queryset = queryset.filter(
                 name__icontains=search_string)
-            return product_list_queryset
-        return super().get_queryset()
+        return queryset
 
 
 class ProductDetailView(detail.DetailView):

@@ -13,16 +13,20 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
+if os.path.isfile("env.py"):
+    import env
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+
+development = os.environ.get("DEVELOPMENT", False)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-*l^g57%e(i*lhc9fo54zvk*o&01t=+g4mn_m$+brbki1bp@z)3"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# SECURITY WARNING: don"t run with debug turned on in production!
-DEBUG = True
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = development
 
 ALLOWED_HOSTS = []
 
@@ -40,7 +44,8 @@ INSTALLED_APPS = [
     "accounts",
     "basket",
     "home",
-    "products"
+    "products",
+    "checkout"
 ]
 
 MIDDLEWARE = [
