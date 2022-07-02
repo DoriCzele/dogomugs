@@ -11,6 +11,7 @@
 <p>{{order.payment_confirmed}}</p>
 <p>{{order.shippingaddress.primary_address}}</p>
 <p>{{order.shippingaddress.postcode}}</p>
+<p>{{order.created}}</p>
 <a href="{% url 'order-detail' pk=order.id %}">See order details</a>
 {% endfor %}
 {% else %}
