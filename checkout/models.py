@@ -25,7 +25,7 @@ class ShippingAddress(models.Model):
 
 
 class OrderDetails(models.Model):
-    user = models.OneToOneField(
+    user = models.ForeignKey(
         User, blank=False, null=True, on_delete=models.SET_NULL)
     shipping_address = models.OneToOneField(
         ShippingAddress, blank=False, null=True, on_delete=models.SET_NULL)
@@ -43,7 +43,7 @@ class OrderDetails(models.Model):
 
 
 class OrderItems(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.PROTECT)
+    product = models.ForeignKey(Product, on_delete=models.PROTECT)
     order_details = models.ForeignKey(OrderDetails, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
     price = models.DecimalField(decimal_places=2, max_digits=5)
