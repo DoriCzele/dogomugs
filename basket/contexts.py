@@ -6,7 +6,7 @@ def basket_context(request):
     total_items = 0
     basket = request.session.get("basket", [])
     # Example item structure: {"id":1, "quantity":1}
-    for item in basket:
+    for item_index, item in enumerate(basket):
         if int(item["quantity"]) > 0:
             try:
                 product = Product.objects.get(
@@ -15,7 +15,7 @@ def basket_context(request):
                     basket_price += product.price * int(item["quantity"])
                     total_items += int(item["quantity"])
             except Product.DoesNotExist:
-                basket.pop(item)
+                basket.pop(item_index)
                 continue
 
     request.session["basket"] = basket
