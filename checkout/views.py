@@ -34,8 +34,8 @@ class ShippingFormView(LoginRequiredMixin, FormView):
         # Need to handle existing shipping address being equal and having orderdetails
         # Update latest existing shipping address if not related to an order
         try:
-            unused_address = ShippingAddress.objects.get(
-                user=self.request.user, orderdetails=None)
+            unused_address = ShippingAddress.objects.filter(
+                user=self.request.user, orderdetails=None).order_by("-updated").first()
             if unused_address:
                 form.instance.id = unused_address.id
                 form.instance.created = unused_address.created
@@ -96,9 +96,23 @@ class PaymentView(View):
                 line_items=line_items,
                 mode="payment",
                 success_url=request.build_absolute_uri(
-                    reverse("basket")),
+                    reverse("payment-success")),
                 cancel_url=request.build_absolute_uri(
                     reverse("basket"))
             )
 
         return redirect(stripe_session.url)
+
+
+class PaymentSuccessView(View):
+    def get(self, request):
+        order = OrderDetails.objects.filter(
+            user=request.user).order_by("-updated").first()
+        order.payment_confirmed = True
+        order.save()
+
+        basket = request.session.get("basket", [])
+        if basket:
+            request.session["basket"] = []
+
+        return(render(request, "payment_success.html"))
