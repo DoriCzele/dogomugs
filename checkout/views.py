@@ -90,7 +90,6 @@ class PaymentView(View):
                         return redirect(reverse("basket"))
         stripe.api_key = os.environ.get("STRIPE_KEY")
 
-        order_details.save()
         if line_items:
             stripe_session = stripe.checkout.Session.create(
                 line_items=line_items,
@@ -100,6 +99,12 @@ class PaymentView(View):
                 cancel_url=request.build_absolute_uri(
                     reverse("basket"))
             )
+        order_details.stripe_id = stripe_session.id
+        order_details.save()
+
+        basket = request.session.get("basket", [])
+        if basket:
+            request.session["basket"] = []
 
         return redirect(stripe_session.url)
 
@@ -108,11 +113,15 @@ class PaymentSuccessView(View):
     def get(self, request):
         order = OrderDetails.objects.filter(
             user=request.user).order_by("-updated").first()
-        order.payment_confirmed = True
-        order.save()
 
-        basket = request.session.get("basket", [])
-        if basket:
-            request.session["basket"] = []
+        stripe.api_key = os.environ.get("STRIPE_KEY")
+        stripe_session = stripe.checkout.Session.retrieve(order.stripe_id)
+
+        if stripe_session["status"] == "complete":
+            order.payment_confirmed = True
+            order.save()
+        else:
+            # TODO: redirect to orders page (when created)
+            return redirect("basket")
 
         return(render(request, "payment_success.html"))
