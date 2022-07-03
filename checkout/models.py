@@ -27,7 +27,7 @@ class ShippingAddress(models.Model):
 class OrderDetails(models.Model):
     user = models.ForeignKey(
         User, blank=False, null=True, on_delete=models.SET_NULL)
-    shipping_address = models.OneToOneField(
+    shipping_address = models.ForeignKey(
         ShippingAddress, blank=False, null=True, on_delete=models.SET_NULL)
     total_price = models.DecimalField(
         decimal_places=2, max_digits=8, default=0)
