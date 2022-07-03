@@ -120,3 +120,17 @@ p {
     color: #ffff; 
     background-color: #E07A5F ; 
   } 
+
+.contact-us {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #000000;
+ } 
+
+.contact-us:hover {
+    color: #E07A5F;
+}
+
+.fa-envelope-circle-check{
+    font-size: 5rem;
+}
