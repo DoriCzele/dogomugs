@@ -23,6 +23,7 @@ from basket import urls as basket_urls
 from checkout import urls as checkout_urls
 from home import urls as home_urls
 from products import urls as product_urls
+from contact import urls as contact_urls
 
 
 urlpatterns = [
@@ -32,4 +33,5 @@ urlpatterns = [
     path("products/", include(product_urls)),
     path("basket/", include(basket_urls)),
     path("checkout/", include(checkout_urls)),
+    path("contact/", include(contact_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
