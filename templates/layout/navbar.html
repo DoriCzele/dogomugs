@@ -28,11 +28,10 @@
               </i>Products
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item text-uppercase" href="#">Ceramic Mugs</a></li>
-              <li><a class="dropdown-item text-uppercase" href="#">Camping Mugs</a></li>
-              <li><a class="dropdown-item text-uppercase" href="#">Water Bottles</a></li>
-              <li>
+              {% for category in categories%}
+              <li><a class="dropdown-item text-uppercase" href="{% url 'product-list' %}?category={{category.id}}">{{category.name}}</a></li>
                 <hr class="dropdown-divider">
+                {% endfor %}
               </li>
               <li><a class="dropdown-item text-uppercase" href="{% url 'product-list' %}">All products</a></li>
             </ul>
