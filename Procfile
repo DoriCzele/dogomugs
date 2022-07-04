@@ -1,0 +1,1 @@
+web: gunicorn dogomugs.wsgi:application
