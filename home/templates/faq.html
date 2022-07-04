@@ -2,22 +2,22 @@
 <h3 class="text-uppercase my-4 justify-content-center d-flex">Frequently Asked Questions</h3>
 
 <div class="container">
-{% for question in questions %}
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="faqAccordion">
+        {% for question in questions %}
         <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h2 class="accordion-header" id="heading{{question.id}}">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{question.id}}" aria-expanded="true" aria-controls="collapse{{question.id}}">
             {{ question.question }}
             </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="collapse{{question.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{question.id}}" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
                 <p>{{ question.answer }}</p>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-{% endfor %}
 </div>
 
 <p class="text-uppercase mt-4 justify-content-center d-flex">Any questions?</p>
