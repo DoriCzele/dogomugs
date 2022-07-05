@@ -10,6 +10,7 @@
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Quantity</th>
+          <th></th>
           <th scope="col">Price</th>
         </tr>
       </thead>
@@ -19,21 +20,22 @@
           <td><a href="{% url 'product-detail' pk=product.id %}"
               class="text-decoration-none link-dark">{{ product.name }}</a></td>
           <!-- Quantity number selector -->
-          <td><input class="form-control" type="number" min="0" max="{{ product.max_quantity }}"
+          <td><input class="form-control qty-input-field" type="number" min="0" max="{{ product.max_quantity }}"
               name="quantity-product-{{product.id}}" value="{{ product.quantity }}"></td>
-          <td>{{ product.price }}</td>
+          <td><i class="fa-solid fa-trash btn" id="delete-product-{{product.id}}" aria-label="Delete product"></i> <button class="btn" type="submit" aria-label="Save changes"><i class="fa-solid fa-floppy-disk"></i></button></td>
+          <td>£ {{ product.price }}</td>
         </tr>
         {% endfor %}
         <tr>
-          <th scope="col">Total</th>
           <td></td>
-          <td>{{ basket_price }}</td>
+          <td></td>
+          <th scope="col">Total:</th>
+          <td>£ {{ basket_price }}</td>
         </tr>
         <tr>
         </tr>
       </tbody>
     </table>
-    <button class="btn btn-primary" type="submit">Save changes</button>
   </form>
 </div>
 <div class="container">
@@ -51,4 +53,8 @@
 <p class="justify-content-center d-flex mt-5">You have no items in your basket!</p>
 <a href="{% url 'product-list' %}" class="text-uppercase mt-5 text-decoration-none contact-us justify-content-center d-flex">shop now!</a>
 {% endif %}
+{% endblock %}
+{% block viewspecificscripts %}
+{% load static %}
+<script src="{% static 'js/basket.js' %}"></script>
 {% endblock %}
