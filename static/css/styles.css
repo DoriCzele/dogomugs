@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 .free-delivery-banner {
     background-color: #E07A5F;
     color: #ffff;
@@ -70,15 +75,16 @@ body {
     background-color: #E07A5F;
 }
 
-.fa-solid {
+.fa-brands {
     background-color: #ffff;
     color:  #3D405B;
     transition-duration: 0.3s;
 }
 
-.fa-solid :hover{
+.fa-linkedin :hover{
     background-color: #E07A5F;
 }
+
 
 .lock-icon{
     color: #ffff;
@@ -102,10 +108,6 @@ p {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-}
-
-.fa-brands{
-    color: #ffff;
 }
 
 .shopping-bag-container{
@@ -133,4 +135,16 @@ p {
 
 .fa-envelope-circle-check{
     font-size: 5rem;
+}
+
+.fa-circle-check{
+    font-size: 5rem;
+}
+
+.fa-check{
+    color: #33a633;
+}
+
+.fa-x {
+    color: #bb5353;
 }
