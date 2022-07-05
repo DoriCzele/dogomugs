@@ -16,6 +16,9 @@
   {% include "layout/navbar.html" %}
   {% block content %}
   {% endblock %}
+  {% if messages %}
+  {% include "layout/toast.html" %}
+  {% endif %}
   {% include "layout/footer.html" %}
   {% include "layout/scripts.html" %}
 </body>

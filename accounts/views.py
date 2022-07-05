@@ -1,4 +1,4 @@
-from django.contrib import auth
+from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
@@ -18,6 +18,8 @@ def register(request):
     - Redirect to homepage
     """
     if request.user.is_authenticated:
+        messages.error(
+            request, "You are already logged in.")
         return redirect("home")
     form = RegisterForm()
     if request.method == "POST":
@@ -41,6 +43,8 @@ def login(request):
     - Redirect to homepage
     """
     if request.user.is_authenticated:
+        messages.error(
+            request, "You are already logged in.")
         return redirect("home")
     form = AuthenticationForm()
     if request.method == "POST":
@@ -53,6 +57,8 @@ def login(request):
             )
             if user is not None:
                 auth.login(request, user)
+                messages.success(
+                    request, "Welcome back!")
                 return redirect("home")
     return render(request, "login.html", {"form": form})
 
