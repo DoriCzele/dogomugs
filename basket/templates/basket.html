@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container shopping-bag-container">
-  <h2 class="text-uppercase">Your basket</h2>
+  <h2 class="text-uppercase justify-content-center d-flex">Your basket</h2>
   {% if products|length > 0 %}
   <form method="post" action="{% url 'modify-existing-items' %}">
     {% csrf_token %}
@@ -48,6 +48,7 @@
   </div>
 </div>
 {% else %}
-<p>You have no items in your basket, <a href="{% url 'product-list' %}">go to products.</a></p>
+<p class="justify-content-center d-flex mt-5">You have no items in your basket!</p>
+<a href="{% url 'product-list' %}" class="text-uppercase mt-5 text-decoration-none contact-us justify-content-center d-flex">shop now!</a>
 {% endif %}
 {% endblock %}

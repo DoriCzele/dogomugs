@@ -1,8 +1,8 @@
 {% load static %}
 
-<div class="card text-center">
+<div class="card text-center my-5">
     <div class="card-header">   
-        <h4 class="text-uppercase my-3 justify-content-center d-flex">Frequently Asked Questions</h>
+        <h5 class="text-uppercase my-1 justify-content-center d-flex">Frequently Asked Questions</h5>
     </div>
         <div class="accordion accordion-flush" id="faqAccordion">
              {% for question in questions %}
@@ -21,5 +21,7 @@
             {% endfor %}
       </div>
 </div>
-<p class="text-uppercase mt-4 justify-content-center d-flex">Still have a question?</p>
+
+<p class="text-uppercase justify-content-center d-flex">Still have a question?</p>
+<i class="fa-solid fa-arrow-down justify-content-center d-flex my-1"></i>
 <a href="{% url 'contact' %}" class="text-uppercase my-1 justify-content-center d-flex text-decoration-none contact-us">Contact us!</a>
