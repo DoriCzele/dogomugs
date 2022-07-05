@@ -22,9 +22,9 @@
                 <li class="list-group-item">{{order.items_quantity}} item</li>
                 {% endif %}
                 {% if order.payment_confirmed %}
-                <li class="list-group-item">Payment status <i class="fa-solid fa-check"></i></li>
+                <li class="list-group-item">Payment status <i class="fa-solid fa-check" aria-label="paid"></i></li>
                 {% else %}
-                <li class="list-group-item">Payment status <i class="fa-solid fa-x"></i></li>
+                <li class="list-group-item">Payment status <i class="fa-solid fa-x" aria-label="pending payment"></i></li>
                 {% endif %}
                 <a href="{% url 'order-detail' pk=order.id %}" class="btn btn-primary text-uppercase mt-3">Order details</a>
               </ul>
