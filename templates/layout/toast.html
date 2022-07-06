@@ -1,0 +1,14 @@
+<div class="toast-container position-fixed bottom-0 mb-5 end-0 pb-3 p-0">
+	{% for message in messages %}
+	<div class="toast mb-0" role="alert" aria-live="assertive" aria-atomic="true">
+		<div class="toast-header">
+			<strong class="me-auto">Dog O Mugs</strong>
+			<small>Message!</small>
+			<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+		</div>
+		<div class="toast-body">
+			{{message}}
+		</div>
+	</div>
+	{% endfor %}
+</div>

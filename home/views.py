@@ -10,4 +10,3 @@ class HomeView(TemplateView):
         questions = FrequentlyAskedQuestion.objects.all()
         context["questions"] = questions
         return super().render_to_response(context)
-        # return super().get(request, *args, **kwargs)
