@@ -26,6 +26,8 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
+            messages.success(
+                request, "Registration successful!")
             auth.login(request, user)
             return redirect("home")
     return render(request, "register.html", {"form": form})
