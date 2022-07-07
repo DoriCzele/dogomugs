@@ -325,6 +325,6 @@ For this project a Stripe account (for payments) is necessary to create as well 
 
 ## **Credits**
 
-* I would like to thank my mentor Simen [Eventyret_mentor](https://github.com/Eventyret) for his support and encouragement throughout the course.
+  I would like to thank my mentor Simen [Eventyret_mentor](https://github.com/Eventyret) for his support and encouragement throughout the course.
 
 [Back to Top](#table-of-contents)
