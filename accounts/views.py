@@ -72,4 +72,6 @@ def logout(request):
     Redirect to the homepage.
     """
     auth.logout(request)
+    messages.success(
+        request, "See you soon!")
     return redirect("home")
