@@ -1,24 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
-
+{% load static %}
 
 <div class="container justify-content-center">
 	<h3 class="text-center my-3 text-uppercase">Contact us</h3>
 </div>
-
-<!--Contact form-->
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-		<form method="POST">
-		{% csrf_token %}
-		{{ form|crispy }}
-			<div class="d-flex">
-			<button type="submit" class="btn btn-primary mt-2 mb-2">Send message</button>
+<!--Contact us form -->
+<div class="container form-box justify-content-center">
+	<div class="card mb-3 border-0">
+		<div class="row">
+			<div class="col">
+				<img src="{% static 'img/office.jpg' %}" class="rounded-start form-image" alt="Dog in office">
 			</div>
-		</div>
+			<div class="col-md-6">
+				<form method="POST">
+				{% csrf_token %}
+				{{ form|crispy }}
+			</div>		
+			<div class="mw-50 justify-content-center d-flex">
+				<button type="submit" class="btn btn-primary mt-2 mb-2">Send message</button>
+			</div>
+		</div>	
 	</div>
 </div>
+			
+
+
+
+
+
+
+
+
+<!--Contact form-->
 
 {% endblock %}
