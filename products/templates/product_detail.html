@@ -10,7 +10,7 @@
 				<div class="card-body border-0">
 					<h5 class="card-title">{{ product.name }}</h5>
 					<p class="card-text">{{ product.description }}</p>
-					<p>{{ product.price }}</p>
+					<p>£ {{ product.price }}</p>
 					<p>Currently in stock: {{ product.quantity }}</p>
 					<a type="button" class="btn btn-primary" href="{% url 'product-list' %}" rel="noopener"
 						aria-label="Back to products">Back</a>

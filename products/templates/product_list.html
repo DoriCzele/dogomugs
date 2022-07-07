@@ -25,7 +25,7 @@
 						<h5>{{ product.name }}</h5>
 						</div>
 						<ul class="list-group list-group-flush">
-			 			<li class="list-group-item">{{ product.price }}</li>
+			 			<li class="list-group-item">£ {{ product.price }}</li>
 			  			<li class="list-group-item">In stock: {{ product.quantity }}</li>
 					</ul>
 					<a type="button" class="btn btn-primary my-1" href="{% url 'product-detail' pk=product.id %}">PRODUCT DETAILS</a>
