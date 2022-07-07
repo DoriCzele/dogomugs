@@ -9,32 +9,36 @@
             <img src="{% static 'img/corgi.jpg' %}" class="rounded-start form-image" alt="Corgi">
         </div>
         <div class="col-6">
-        <div id="order-detail-card" class="card-body">
-            <h4 class="card-title my-5">Ordered on {{orderdetails.created}}</h4>
-            <p>{{orderdetails.items_quantity}} items in total</p>
-            <p>Total price: £{{orderdetails.total_price}}</p>
-            <ul class="list-group list-group-flush">
-                {% for order_item in orderdetails.orderitems_set.all %}
-                <li class="list-unstyled">{{ order_item.quantity }} X {{ order_item.product.name }}</li>
-                <li class="list-unstyled">£{{ order_item.price }} each</li>
-            </ul>
-            {% endfor %}
-       
-            <h5 class="mt-5">Shipping Address:</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-unstyled">{{orderdetails.shipping_address.full_name}}</li>
-                <li class="list-unstyled">{{orderdetails.shipping_address.primary_address}}</li>
-                <li class="list-unstyled">{{orderdetails.shipping_address.secondary_address}}</li>
-                <li class="list-unstyled">{{orderdetails.shipping_address.town_or_city}}</li>
-                <li class="list-unstyled">{{orderdetails.shipping_address.county}}</li>
-                <li class="list-unstyled">{{orderdetails.shipping_address.postcode}}</li>
-                <li class="list-unstyled">{{orderdetails.shipping_address.country}}</li>
-                <li class="list-unstyled">{{orderdetails.shipping_address.phone_number}}</li>
-            </ul> 
+            <div id="order-detail-card" class="card-body">
+                <h4 class="card-title my-5">Ordered on {{orderdetails.created}}</h4>
+                <p>{{orderdetails.items_quantity}} items in total</p>
+                <p>Total price: £{{orderdetails.total_price}}</p>
+                <ul class="list-group list-group-flush">
+                    {% for order_item in orderdetails.orderitems_set.all %}
+                    <li class="list-unstyled">{{ order_item.quantity }} X {{ order_item.product.name }}</li>
+                    <li class="list-unstyled">£{{ order_item.price }} each</li>
+                </ul>
+                {% endfor %}
+                <h5 class="mt-5">Shipping Address:</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-unstyled">{{orderdetails.shipping_address.full_name}}</li>
+                    <li class="list-unstyled">{{orderdetails.shipping_address.primary_address}}</li>
+                    <li class="list-unstyled">{{orderdetails.shipping_address.secondary_address}}</li>
+                    <li class="list-unstyled">{{orderdetails.shipping_address.town_or_city}}</li>
+                    <li class="list-unstyled">{{orderdetails.shipping_address.county}}</li>
+                    <li class="list-unstyled">{{orderdetails.shipping_address.postcode}}</li>
+                    <li class="list-unstyled">{{orderdetails.shipping_address.country}}</li>
+                    <li class="list-unstyled">{{orderdetails.shipping_address.phone_number}}</li>
+                </ul>
+            </div>
         </div>
-        </div>  
+        {% if not orderdetails.payment_confirmed %}
+        <p class="my-3 d-flex justify-content-center"><a href="{% url 'payment' order_id=orderdetails.id %}" class="btn btn-primary text-uppercase">Continue payment</a></p>
+            {% endif %}
+        <p class="my-3 d-flex justify-content-center"><a href="{% url 'order-list' %}" class="btn btn-primary text-uppercase">Back to all orders</a></p>
+        </div>
     </div>
 </div>
 
-<p class="my-3 d-flex justify-content-center"><a href="{% url 'order-list' %}" class="btn btn-primary text-uppercase">Back to all orders</a></p>
+<!-- <p class="my-3 d-flex justify-content-center"><a href="{% url 'order-list' %}" class="btn btn-primary text-uppercase">Back to all orders</a></p> -->
 {% endblock %}

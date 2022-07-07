@@ -15,7 +15,8 @@ class OrderDetailsListView(list.ListView):
     def get_queryset(self):
         """Override get_queryset to enable search OrderDetails filtering."""
         queryset = super().get_queryset()
-        queryset = queryset.filter(user=self.request.user).order_by("-updated")
+        queryset = queryset.filter(
+            user=self.request.user, items_quantity__gt=0).order_by("-updated")
         return queryset
 
 

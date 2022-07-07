@@ -7,9 +7,8 @@
 </div>
 
 <div class="container">
-<div class="row">
-{% for order in object_list %}
-
+  <div class="row">
+    {% for order in object_list %}
     <div class="col-xs-12 col-sm-6 col-md-4 d-flex justify-content-center my-1">
       <div class="card my-3">
         <div class="card-body">
@@ -31,16 +30,14 @@
         </div>
       </div>
     </div>
-{% endfor %}
-{% include "layout/pagination_control.html" %}
-                {% else %}
-                <div class="container">
-                <p>There are no orders to display.</p>
-                </div>
-                {% endif %}
-
-</div>
-
+    {% endfor %}
+    {% include "layout/pagination_control.html" %}
+    {% else %}
+    <div class="container">
+      <p>There are no orders to display.</p>
+    </div>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}
 
