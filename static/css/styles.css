@@ -5,16 +5,10 @@ html {
     scroll-behavior: smooth;
 }
 
-
 .free-delivery-banner {
     background-color: #E07A5F;
     color: #ffff;
 }
-
-.nav-icon {
-    font: 6rem;
-}
-
 
 body {
     margin-bottom: 5rem;
@@ -77,15 +71,6 @@ body {
     background-color: #E07A5F;
 }
 
-.fa-brands {
-    color:  #ffff;
-    transition-duration: 0.3s;
-}
-
-.fa-linkedin :hover{
-    background-color: #E07A5F;
-}
-
 .form-box {
     margin-top: 2%;
     font-family: 'Poppins', sans-serif;
@@ -128,32 +113,6 @@ p {
     color: #E07A5F;
 }
 
-.fa-solid{
-    color: #3D405B;
-}
-
-.fa-envelope-circle-check{
-    color: #3D405B;
-    font-size: 5rem;
-}
-
-.fa-circle-check{
-    color: #3D405B;
-    font-size: 5rem;
-}
-
-.fa-check{
-    color: #33a633;
-}
-
-.fa-x {
-    color: #bb5353;
-}
-
-.fa-arrow-down{
-    font-size: 2rem;
-}
-
 .carousel {
     margin: auto;
     max-width: 70%;
@@ -188,6 +147,62 @@ background-color:#3D405B;
 color: #ffff;
 }
 
+
+/*Icons styling*/
+
 .fa-trash{
  color: #bb5353;
 }
+
+.fa-right-from-bracket{
+    font-size: 1.3rem; 
+}
+
+.fa-right-from-bracket:hover {
+    color: #E07A5F ; 
+  } 
+
+.fa-basket-shopping{
+    font-size: 1.3rem;
+}
+
+.fa-basket-shopping:hover {
+    color: #E07A5F ; 
+  } 
+
+
+.fa-solid{
+    color: #3D405B;
+}
+
+.fa-envelope-circle-check{
+    color: #3D405B;
+    font-size: 5rem;
+}
+
+.fa-circle-check{
+    color: #3D405B;
+    font-size: 5rem;
+}
+
+.fa-check{
+    color: #33a633;
+}
+
+.fa-x {
+    color: #bb5353;
+}
+
+.fa-arrow-down{
+    font-size: 2rem;
+}
+
+.fa-brands {
+    color:  #ffff;
+    transition-duration: 0.3s;
+}
+
+.fa-linkedin :hover{
+    background-color: #E07A5F;
+}
+
