@@ -10,8 +10,23 @@ class ContactFormView(FormView):
     form_class = ContactForm
     success_url = reverse_lazy("contact-success")
 
+    def get_initial(self):
+        """Pre-populate form with user's email address if it exists."""
+        initial = super().get_initial()
+        try:
+            if self.request.user.email is not None:
+                initial["email_address"] = self.request.user.email
+        except AttributeError:
+            # AnonymousUser has no 'email' attribute
+            pass
+        return initial
+
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        try:
+            form.instance.user = self.request.user
+        except ValueError:
+            # In the case of AnonymousUser
+            pass
         form.save()
         return redirect(self.get_success_url())
 
