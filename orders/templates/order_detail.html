@@ -1,42 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 
 
-<div class="card mb-3 container">
+<div class="card mb-3 container justify-content-center">
     <div class="row">
-      <div class="col-12">
-            <div id="order-detail-card" class="card-body row">
-                <div class="col-6 justify-content-center">
-                <h5 class="card-title">Ordered on {{orderdetails.created}}</h5>
-                <p>{{orderdetails.items_quantity}} items in total</p>
-                <p>Total price: £{{orderdetails.total_price}}</p>
-                <ul class="list-group list-group-flush">
-                    {% for order_item in orderdetails.orderitems_set.all %}
-                    <li class="list-unstyled">{{ order_item.quantity }} X {{ order_item.product.name }}</li>
-                    <li class="list-unstyled">£{{ order_item.price }} each</li>
-                </ul>
-                {% endfor %}
-            </div>
-            <div class="col-6 justify-content-center">
-                <h5 class="card-title">Shipping Address</h5>
-                <ul class="list-group list-group-flush">
-                    <li class="list-unstyled">{{orderdetails.shipping_address.full_name}}</li>
-                    <li class="list-unstyled">{{orderdetails.shipping_address.primary_address}}</li>
-                    <li class="list-unstyled">{{orderdetails.shipping_address.secondary_address}}</li>
-                    <li class="list-unstyled">{{orderdetails.shipping_address.town_or_city}}</li>
-                    <li class="list-unstyled">{{orderdetails.shipping_address.county}}</li>
-                    <li class="list-unstyled">{{orderdetails.shipping_address.postcode}}</li>
-                    <li class="list-unstyled">{{orderdetails.shipping_address.country}}</li>
-                    <li class="list-unstyled">{{orderdetails.shipping_address.phone_number}}</li>
-                </ul>
-                
-            </div>
+        <div class="col-6">
+            <img src="{% static 'img/corgi.jpg' %}" class="rounded-start form-image" alt="Corgi">
         </div>
-    </div>
-    <p class="my-3 d-flex justify-content-center"><a href="{% url 'order-list' %}" class="btn btn-primary text-uppercase">Back to all orders</a></p>
+        <div class="col-6">
+        <div id="order-detail-card" class="card-body">
+            <h4 class="card-title my-5">Ordered on {{orderdetails.created}}</h4>
+            <p>{{orderdetails.items_quantity}} items in total</p>
+            <p>Total price: £{{orderdetails.total_price}}</p>
+            <ul class="list-group list-group-flush">
+                {% for order_item in orderdetails.orderitems_set.all %}
+                <li class="list-unstyled">{{ order_item.quantity }} X {{ order_item.product.name }}</li>
+                <li class="list-unstyled">£{{ order_item.price }} each</li>
+            </ul>
+            {% endfor %}
+       
+            <h5 class="mt-5">Shipping Address:</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-unstyled">{{orderdetails.shipping_address.full_name}}</li>
+                <li class="list-unstyled">{{orderdetails.shipping_address.primary_address}}</li>
+                <li class="list-unstyled">{{orderdetails.shipping_address.secondary_address}}</li>
+                <li class="list-unstyled">{{orderdetails.shipping_address.town_or_city}}</li>
+                <li class="list-unstyled">{{orderdetails.shipping_address.county}}</li>
+                <li class="list-unstyled">{{orderdetails.shipping_address.postcode}}</li>
+                <li class="list-unstyled">{{orderdetails.shipping_address.country}}</li>
+                <li class="list-unstyled">{{orderdetails.shipping_address.phone_number}}</li>
+            </ul> 
+        </div>
+        </div>  
     </div>
 </div>
 
-
-
+<p class="my-3 d-flex justify-content-center"><a href="{% url 'order-list' %}" class="btn btn-primary text-uppercase">Back to all orders</a></p>
 {% endblock %}
