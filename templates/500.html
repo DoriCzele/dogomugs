@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Error page, with link redirecting user to Products or Home page. -->
+<div class="container justify-content-center">
+  <h5 class="text-uppercase mt-4 justify-content-center d-flex">Error 500</h5>
+  <p>Server error!</p>
+  <a href="{% url 'product-list' %}" class="text-uppercase mt-5 justify-content-center d-flex text-decoration-none contact-us">See our products</a>
+  <p class="text-uppercase my-1 justify-content-center d-flex">or</p>
+  <a href="{% url 'home' %}" class="text-uppercase my-1 justify-content-center d-flex text-decoration-none contact-us">Go back to the home page</a>
+</div>
+{% endblock %}
