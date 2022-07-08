@@ -3,7 +3,7 @@
 <div class="container shopping-bag-container">
   <h2 class="text-uppercase justify-content-center d-flex">Your basket</h2>
   {% if products|length > 0 %}
-  <form method="post" action="{% url 'modify-existing-items' %}">
+  <form id="basket-form" method="post" action="{% url 'modify-existing-items' %}">
     {% csrf_token %}
     <table class="table">
       <thead>
@@ -22,7 +22,7 @@
           <!-- Quantity number selector -->
           <td><input class="form-control qty-input-field" type="number" min="0" max="{{ product.max_quantity }}"
               name="quantity-product-{{product.id}}" value="{{ product.quantity }}"></td>
-          <td><i class="fa-solid fa-trash btn" id="delete-product-{{product.id}}" aria-label="Delete product"></i> <button class="btn" type="submit" aria-label="Save changes"><i class="fa-solid fa-floppy-disk"></i></button></td>
+          <td><i class="fa-solid fa-trash btn" id="delete-product-{{product.id}}" aria-label="Delete product"></i></td>
           <td>£ {{ product.price }}</td>
         </tr>
         {% endfor %}
@@ -32,8 +32,6 @@
           <th scope="col">Total:</th>
           <td>£ {{ basket_price }}</td>
         </tr>
-        <tr>
-        </tr>
       </tbody>
     </table>
   </form>
@@ -41,11 +39,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-10 col-sm-6 offset-md-4 col-md-4 offset-xl-6 col-xl-3">
-      <a type="button" class="btn btn-primary w-100 my-1 text-uppercase" href="{% url 'product-list' %}" rel="noopener"
+      <a type="button" class="btn btn-primary w-100 my-1" href="{% url 'product-list' %}" rel="noopener"
       aria-label="Keep shopping">Keep shopping</a>
     </div>
     <div class="col-xs-10 col-sm-6 col-md-4 col-xl-3">
-      <a href="{% url 'shipping-form' %}" class="btn btn-primary no-break w-100 my-1 text-uppercase">Secure checkout</a>
+      <a href="{% url 'shipping-form' %}" id="checkout-button" class="btn btn-primary no-break w-100 my-1">Secure checkout<i class="fa fa-lock ms-1"></i></a>
+      <button class="btn btn-primary no-break w-100 my-1 justify-content-center" id="save-button" form="basket-form" type="submit" aria-label="Save changes">Save changes<i class="fa fa-floppy-disk ms-1 justify-content-center align-items-center"></i></button>
     </div>
   </div>
 </div>
