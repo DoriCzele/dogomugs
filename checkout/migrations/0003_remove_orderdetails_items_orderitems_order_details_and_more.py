@@ -20,18 +20,21 @@ class Migration(migrations.Migration):
             model_name='orderitems',
             name='order_details',
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to='checkout.orderdetails'),
+                on_delete=django.db.models.deletion.CASCADE,
+                to='checkout.orderdetails'),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='shippingaddress',
             name='created',
-            field=models.DateTimeField(auto_now_add=True),
+            field=models.DateTimeField(
+                auto_now_add=True),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='shippingaddress',
             name='updated',
-            field=models.DateTimeField(auto_now=True),
+            field=models.DateTimeField(
+                auto_now=True),
         ),
     ]

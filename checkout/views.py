@@ -120,7 +120,8 @@ class PaymentView(View):
             messages.error(
                 request, "Your order could not be found, please try again.")
             return redirect("order-list")
-        # Stripe Checkout sessions expire after 24 hours, create new (assume expired as safe default)
+        # Stripe Checkout sessions expire after 24 hours, create new (assume
+        # expired as safe default)
         stripe_session_expiry = 0
         if order_details.stripe_id is True:
             try:

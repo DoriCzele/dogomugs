@@ -14,11 +14,22 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='FrequentlyAskedQuestion',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('question', models.TextField()),
-                ('answer', models.TextField()),
-                ('created', models.DateTimeField(auto_now_add=True)),
-                ('updated', models.DateTimeField(auto_now=True)),
+                ('id',
+                 models.BigAutoField(
+                     auto_created=True,
+                     primary_key=True,
+                     serialize=False,
+                     verbose_name='ID')),
+                ('question',
+                 models.TextField()),
+                ('answer',
+                 models.TextField()),
+                ('created',
+                 models.DateTimeField(
+                     auto_now_add=True)),
+                ('updated',
+                 models.DateTimeField(
+                     auto_now=True)),
             ],
         ),
     ]

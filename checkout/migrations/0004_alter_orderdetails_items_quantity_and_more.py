@@ -17,21 +17,30 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='orderdetails',
             name='items_quantity',
-            field=models.IntegerField(default=0),
+            field=models.IntegerField(
+                default=0),
         ),
         migrations.AlterField(
             model_name='orderdetails',
             name='total_price',
-            field=models.DecimalField(decimal_places=2, default=0, max_digits=8),
+            field=models.DecimalField(
+                decimal_places=2,
+                default=0,
+                max_digits=8),
         ),
         migrations.AlterField(
             model_name='orderdetails',
             name='user',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to=settings.AUTH_USER_MODEL),
         ),
         migrations.AlterField(
             model_name='orderitems',
             name='product',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='products.product'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.PROTECT,
+                to='products.product'),
         ),
     ]

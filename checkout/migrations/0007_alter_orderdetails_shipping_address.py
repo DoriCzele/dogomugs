@@ -14,6 +14,9 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='orderdetails',
             name='shipping_address',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='checkout.shippingaddress'),
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to='checkout.shippingaddress'),
         ),
     ]

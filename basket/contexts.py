@@ -10,7 +10,7 @@ def basket_context(request):
     for item_index, item in enumerate(basket):
         if int(item["quantity"]) > 0:
             try:
-                # Get relevant active product that has quantity greater than zero
+                # Get relevant active product that has quantity > zero
                 product = Product.objects.get(
                     id=item["id"], active=True, quantity__gt=0)
                 if product is not None:
