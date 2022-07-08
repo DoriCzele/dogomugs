@@ -5,10 +5,10 @@
 
 <div class="card mb-3 container justify-content-center">
     <div class="row">
-        <div class="col-6">
+        <div class="d-none d-md-block col-md-6">
             <img src="{% static 'img/corgi.jpg' %}" class="rounded-start form-image" alt="Corgi">
         </div>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <div id="order-detail-card" class="card-body">
                 <h4 class="card-title my-5">Ordered on {{orderdetails.created}}</h4>
                 <p>{{orderdetails.items_quantity}} items in total</p>
