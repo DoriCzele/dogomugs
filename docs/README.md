@@ -52,6 +52,11 @@ At the time of submission of this project the deployed version is identical to t
     - [**Register page**](#register-page)
     - [**Flowchart**](#flowchart)
     - [**Database Structure**](#database-structure)
+      - [User Model](#user-model)
+      - [Products Model](#products-model)
+      - [FAQ Model](#faq-model)
+      - [Categories Model](#categories-model)
+      - [Contact Us Model](#contact-us-model)
     - [**Testing**](#testing)
   - [**Local Deployment**](#local-deployment)
   - [**Heroku Deployment**](#heroku-deployment)
@@ -272,6 +277,53 @@ The flowchart was created via [Smart draw](https://smartdraw.com/).
 
 ### **Database Structure**
 
+#### User Model
+
+The User model for this project is part of the Django defaults "django.contrib.auth.models".
+
+#### Products Model
+
+The standard inventory sold on this website is constructed with the following model:
+
+| Key Name            | Database Key     | Field Validation                                     | Value Type                |
+| ------------------- | ---------------- | ---------------------------------------------------- | ------------------------- |
+| Name                | name             | max_length=100                                       | CharField                 |
+| Category            | category         | blank=True, null=True, on_delete=SET_NULL            | ForeignKey Category       |
+| Description         | description      |                                                      | TextField                 |
+| Price               | price            | decimal_places=2, max_digits=5                       | DecimalField              |
+| Quantity            | quantity         |                                                      | PositiveIntegerField      |
+| Image               | image            | blank=True                                           | ImageField                |
+| Active              | active           | default=True                                         | Boolean                   |
+| Created             | created          |                                                      | DateTimeField             |
+| Updated             | updated          |                                                      | DateTimeField             |
+
+
+#### FAQ Model
+
+The FAQ on this website is constructed with the following model:
+
+| Key Name            | Database Key     | Field Validation                                     | Value Type                |
+| ------------------- | ---------------- | ---------------------------------------------------- | ------------------------- |
+| Question            | question         |                                                      | TextField                 |
+| Answer              | answer           |                                                      | TextField                 |
+| Created             | created          |                                                      | DateTimeField             |
+| Updated             | updated          |                                                      | DateTimeField             |
+
+
+#### Categories Model
+
+The categories on this website are constructed with the following model:
+
+#### Contact Us Model
+
+The Contact Us on this website is constructed with the following model:
+
+| Key Name            | Database Key     | Field Validation                                     | Value Type                |
+| ------------------- | ---------------- | ---------------------------------------------------- | ------------------------- |
+| E-mail address      | email            |                                                      | EmailField                |
+| Message             | message          |                                                      | TextField                 |
+| Created             | created          |                                                      | DateTimeField             |
+| Updated             | updated          |                                                      | DateTimeField             |
 
 
 ### **Testing**
