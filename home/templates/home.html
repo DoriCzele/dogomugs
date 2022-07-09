@@ -2,5 +2,7 @@
 {% block content %}
 {% include 'carousel.html' %}
 {% include 'about_us.html' %}
+{% if questions %}
 {% include 'faq.html' %}
+{% endif %}
 {% endblock %}

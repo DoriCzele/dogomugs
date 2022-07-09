@@ -3,14 +3,15 @@ import os
 import stripe
 from datetime import datetime
 
-from django.contrib import auth, messages
+from django.contrib import messages
 from django.db import Error as DatabaseError
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import FormView
+from django.views.generic import TemplateView
 from django.views import View
 from django.forms import model_to_dict
 from django.urls import reverse_lazy
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import redirect, reverse
 
 from basket.contexts import basket_context
 from checkout.forms import ShippingForm
@@ -28,8 +29,12 @@ class ShippingFormView(LoginRequiredMixin, FormView):
         """Pre-populate form with last updated shipping address."""
         initial = super().get_initial()
         # Populate form with the last updated shipping address
-        shipping_address_queryset = ShippingAddress.objects.filter(
-            user=self.request.user).order_by("-updated").first()
+        shipping_address_queryset = None
+        try:
+            shipping_address_queryset = ShippingAddress.objects.filter(
+                user=self.request.user).order_by("-updated").first()
+        except ShippingAddress.DoesNotExist:
+            pass
         if shipping_address_queryset is not None:
             # Create dict from model data
             initial = model_to_dict(shipping_address_queryset)
@@ -54,7 +59,7 @@ class ShippingFormView(LoginRequiredMixin, FormView):
         return super(ShippingFormView, self).form_valid(form)
 
 
-class PaymentView(View):
+class PaymentView(LoginRequiredMixin, View):
     """View for Stripe Checkout payment."""
     GENERIC_STRIPE_ERROR = "Stripe Service temporarily unavailable, please try again later."
     GENERIC_ORDER_CONTACT_ERROR = "There was an error placing your order, please try again later or contact us for assistance."
@@ -259,11 +264,13 @@ class PaymentView(View):
         return redirect(stripe_session.url)
 
 
-class PaymentSuccessView(View):
+class PaymentSuccessView(LoginRequiredMixin, TemplateView):
     """View for Payment Success."""
 
+    template_name = "payment_success.html"
+
     def get(self, request):
-        """Handle get request for PaymentSuccess
+        """Handle get request for PaymentSuccess.
 
         - Get the user's latest updated order.
         - Retrieve the Checkout session to confirm if payment complete.
@@ -293,4 +300,4 @@ class PaymentSuccessView(View):
                     request, "Please check your order's payment status.")
                 return redirect("order-list")
 
-            return(render(request, "payment_success.html"))
+            return super().get(self, request)
