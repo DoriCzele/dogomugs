@@ -45,6 +45,8 @@ class BasketView(LoginRequiredMixin, TemplateView):
                     # Available quantities of stock items check
                     product_ctx_item["max_quantity"] = product.quantity
                     if not product.sufficient_stock(item["quantity"]):
+                        messages.warning(
+                            self.request, "Some items are unavailable, your basket has been updated.")
                         product_ctx_item["quantity"] = product_ctx_item["max_quantity"]
                     products_ctx.append(product_ctx_item)
         context["products"] = products_ctx
