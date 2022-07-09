@@ -1,6 +1,6 @@
-from django.shortcuts import redirect, reverse
-from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect, reverse
 from django.views.generic import TemplateView
 
 from products.models import Product
@@ -50,7 +50,6 @@ class BasketView(LoginRequiredMixin, TemplateView):
         return context
 
 
-@login_required
 def add_basket_item(request, item_id=None, item_quantity=None):
     """Add an individual item to the basket."""
     basket = request.session.get("basket", [])
@@ -67,7 +66,6 @@ def add_basket_item(request, item_id=None, item_quantity=None):
     return redirect(reverse("basket"))
 
 
-@login_required
 def modify_existing_items(request):
     """Add/modify multiple items in the basket.
 
@@ -92,12 +90,11 @@ def modify_existing_items(request):
             # Modify item in basket
             basket = amend_basket_item(
                 basket, item["item_id"], item["item_quantity"])
-
     request.session["basket"] = basket
-    return redirect(reverse("basket"))
+    messages.success(request, "Your basket has been updated.")
+    return redirect("basket")
 
 
-@login_required
 def amend_basket_item(basket, item_id, item_quantity):
     """Modify the basket, adding new item or editing existing."""
     already_exists_in_basket = False
