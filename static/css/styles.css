@@ -5,21 +5,13 @@ html {
     scroll-behavior: smooth;
 }
 
-.free-delivery-banner {
-    background-color: #E07A5F;
-    color: #ffff;
-}
-
 body {
     margin-bottom: 5rem;
 }
 
-.logo {
-    width: 40%;
-}
-
-.form-container{
-    width: 70%;
+.free-delivery-banner {
+    background-color: #E07A5F;
+    color: #ffff;
 }
 
 .no-break {
@@ -43,6 +35,7 @@ body {
     color: #E07A5F ;
   }
 
+/*Product preview card styling */
 .product-card {
     border: 0;
     padding-left: 2%;
@@ -55,11 +48,13 @@ body {
     max-width:25rem
 }
  
+/*Product details card styling */
 .details-card {
     margin-top: 5%;
     margin-bottom: 5%;
 }
 
+/*Button styling*/
 .btn-primary {
     text-transform: uppercase;
     background-color: #3D405B;
@@ -67,9 +62,26 @@ body {
     transition-duration: 0.3s;
     border-radius: 40px;
 }
+
 .btn-primary:hover {
     background-color: #E07A5F;
 }
+
+.search-button {
+    border-color: #E07A5F;
+    color: #E07A5F;
+}
+
+.search-button:hover {
+    color: #ffff; 
+    background-color: #E07A5F ; 
+  } 
+
+#save-button {
+    display: none;
+}
+
+/*Form stylings */
 
 .form-box {
     margin-top: 2%;
@@ -84,6 +96,10 @@ p {
     width: 100%;
 }
 
+.form-container{
+    width: 70%;
+}
+
 .card {
     margin-left: auto;
     margin-right: auto;
@@ -94,15 +110,7 @@ p {
     margin-top: 5%;
 }
 
-.search-button {
-    border-color: #E07A5F;
-    color: #E07A5F;
-}
-.search-button:hover {
-    color: #ffff; 
-    background-color: #E07A5F ; 
-  } 
-
+/*Contact us page styling*/
 .contact-us {
     font-size: 1.7rem;
     font-weight: 600;
@@ -113,6 +121,7 @@ p {
     color: #E07A5F;
 }
 
+/*Carousel styling */
 .carousel {
     margin: auto;
     max-width: 70%;
@@ -125,6 +134,7 @@ p {
     }
 }
 
+/*Welcome container styling*/
 .welcome-message{
     font-size: 3rem ;
     font-family: 'Lobster', cursive;
@@ -136,6 +146,7 @@ p {
     text-align: center;
 }
 
+/*FAQ accordion styling*/
 .accordion-button:not(.collapsed) {
     color: #000000;
     background-color: #ffff;
@@ -146,7 +157,6 @@ p {
 background-color:#3D405B;
 color: #ffff;
 }
-
 
 /*Icons styling*/
 
@@ -204,8 +214,4 @@ color: #ffff;
 
 .fa-linkedin :hover{
     background-color: #E07A5F;
-}
-
-#save-button {
-    display: none;
 }
