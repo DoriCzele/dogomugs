@@ -13,13 +13,13 @@
 				<img src="{% static 'img/office.jpg' %}" class="rounded-start form-image" alt="Dog in office">
 			</div>
 			<div class="col-md-6">
-				<form method="POST">
+				<form id="contact-us-form" method="POST">
 				{% csrf_token %}
 				{{ form|crispy }}
 				</form>
 			</div>
 			<div class="mw-50 justify-content-center d-flex">
-				<button type="submit" class="btn btn-primary mt-2 mb-2">Send message</button>
+				<button type="submit" form="contact-us-form" class="btn btn-primary mt-2 mb-2">Send message</button>
 			</div>
 		</div>
 	</div>
