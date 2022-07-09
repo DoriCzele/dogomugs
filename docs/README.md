@@ -314,6 +314,12 @@ The FAQ on this website is constructed with the following model:
 
 The categories on this website are constructed with the following model:
 
+| Key Name            | Database Key     | Field Validation                                     | Value Type                |
+| ------------------- | ---------------- | ---------------------------------------------------- | ------------------------- |
+| Name                | name             |max_length=100                                       | CharField                 |
+| Created             | created          |                                                      | DateTimeField             |
+| Updated             | updated          |                                                      | DateTimeField             |
+
 #### Contact Us Model
 
 The Contact Us on this website is constructed with the following model:
