@@ -28,8 +28,6 @@ class OrderDetailsDetailView(LoginRequiredMixin, detail.DetailView):
     template_name = "order_detail.html"
 
     def get_queryset(self):
+        """Override get_queryset to scope queryset to user."""
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
-
-    def get(self, request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)

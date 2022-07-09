@@ -4,6 +4,7 @@ from products.models import Product
 
 
 class ShippingAddress(models.Model):
+    """Model for ShippingAddress."""
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=100, null=False, blank=False)
     primary_address = models.CharField(max_length=50, null=False, blank=False)
@@ -18,6 +19,7 @@ class ShippingAddress(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        """String representation for ShippingAddress."""
         return f"{self.id}: {self.full_name} - {self.primary_address}"
 
     class Meta:
@@ -25,6 +27,7 @@ class ShippingAddress(models.Model):
 
 
 class OrderDetails(models.Model):
+    """Model for OrderDetails."""
     user = models.ForeignKey(
         User, blank=False, null=True, on_delete=models.SET_NULL)
     shipping_address = models.ForeignKey(
@@ -38,13 +41,16 @@ class OrderDetails(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        """String representation for OrderDetails."""
         return f"{self.id}: {self.user.username}: {self.total_price}"
 
     class Meta:
+        """Meta attributes, defining the plural representation."""
         verbose_name_plural = "Orders Details"
 
 
 class OrderItems(models.Model):
+    """Model for OrderItems."""
     product = models.ForeignKey(Product, on_delete=models.PROTECT)
     order_details = models.ForeignKey(OrderDetails, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
@@ -53,7 +59,9 @@ class OrderItems(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        """String representation for OrderItems."""
         return f"{self.id}: {self.quantity} - {self.product.name}"
 
     class Meta:
+        """Meta attributes, defining the plural representation."""
         verbose_name_plural = "Orders Items"

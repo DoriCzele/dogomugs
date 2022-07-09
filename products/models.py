@@ -8,9 +8,11 @@ class Category(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        """String representation for Category."""
         return f"{self.id}: {self.name}"
 
     class Meta:
+        """Meta attributes, defining the plural representation."""
         verbose_name_plural = "Categories"
 
 
@@ -28,12 +30,15 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        """String representation for Product."""
         return self.name
 
     def sufficient_stock(self, basket_item_quantity):
+        """Quantity check for items in basket."""
         if self.quantity < basket_item_quantity or self.active is False:
             return False
         return True
 
     class Meta:
+        """Meta attributes, defining the plural representation."""
         ordering = ("-created",)

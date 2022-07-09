@@ -6,6 +6,7 @@ from contact.forms import ContactForm
 
 
 class ContactFormView(FormView):
+    """Form view for Contact Us page."""
     template_name = "contact.html"
     form_class = ContactForm
     success_url = reverse_lazy("contact-success")
@@ -22,6 +23,7 @@ class ContactFormView(FormView):
         return initial
 
     def form_valid(self, form):
+        """Put logged in user details into contact model."""
         try:
             form.instance.user = self.request.user
         except ValueError:
@@ -32,4 +34,5 @@ class ContactFormView(FormView):
 
 
 class ContactSuccessView(TemplateView):
+    """Template view for Contact success."""
     template_name = "contact_success.html"
