@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from checkout.models import OrderDetails, OrderItems, ShippingAddress
 
 admin.site.register(ShippingAddress)

@@ -1,5 +1,6 @@
-from django.views.generic import list, detail
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import detail, list
+
 from checkout.models import OrderDetails
 
 

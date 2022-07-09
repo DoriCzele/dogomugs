@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, reverse
-from django.views.generic import list, detail
+from django.views.generic import detail, list
+
 from products.models import Product
 
 

@@ -1,21 +1,20 @@
 import os
-
-import stripe
 from datetime import datetime
 
+import stripe
 from django.contrib import messages
-from django.db import Error as DatabaseError
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import FormView
-from django.views.generic import TemplateView
-from django.views import View
+from django.db import Error as DatabaseError
 from django.forms import model_to_dict
-from django.urls import reverse_lazy
 from django.shortcuts import redirect, reverse
+from django.urls import reverse_lazy
+from django.views import View
+from django.views.generic import TemplateView
+from django.views.generic.edit import FormView
 
 from basket.contexts import basket_context
 from checkout.forms import ShippingForm
-from checkout.models import ShippingAddress, OrderDetails, OrderItems
+from checkout.models import OrderDetails, OrderItems, ShippingAddress
 from products.models import Product
 
 

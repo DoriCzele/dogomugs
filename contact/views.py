@@ -1,7 +1,8 @@
-from django.views.generic.edit import FormView
-from django.views.generic import TemplateView
-from django.urls import reverse_lazy
 from django.shortcuts import redirect
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView
+from django.views.generic.edit import FormView
+
 from contact.forms import ContactForm
 
 

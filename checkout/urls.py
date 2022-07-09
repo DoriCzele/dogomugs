@@ -1,5 +1,6 @@
 from django.urls import path
-from checkout.views import ShippingFormView, PaymentView, PaymentSuccessView
+
+from checkout.views import PaymentSuccessView, PaymentView, ShippingFormView
 
 urlpatterns = [
     path(

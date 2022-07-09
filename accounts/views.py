@@ -1,11 +1,12 @@
 from django.contrib import auth, messages
-from django.shortcuts import redirect
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import redirect
 from django.urls import reverse, reverse_lazy
-from accounts.mixins import AnonymousUserRequiredMixin
 from django.views.generic import FormView
+
 from accounts.forms import RegisterForm
+from accounts.mixins import AnonymousUserRequiredMixin
 
 
 class RegisterFormView(AnonymousUserRequiredMixin, FormView):
