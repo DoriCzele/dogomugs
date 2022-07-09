@@ -1,8 +1,9 @@
 from django.views.generic import list, detail
+from django.contrib.auth.mixins import LoginRequiredMixin
 from checkout.models import OrderDetails
 
 
-class OrderDetailsListView(list.ListView):
+class OrderDetailsListView(LoginRequiredMixin, list.ListView):
     """Render a list of OrderDetails objects.
 
     Provide functionality for pagination and searching of OrderDetails in a list view.
@@ -20,7 +21,7 @@ class OrderDetailsListView(list.ListView):
         return queryset
 
 
-class OrderDetailsDetailView(detail.DetailView):
+class OrderDetailsDetailView(LoginRequiredMixin, detail.DetailView):
     """Render a detail view of the OrderDetails model instance."""
 
     model = OrderDetails
