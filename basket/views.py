@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.forms import model_to_dict
 from django.shortcuts import redirect, reverse
 from django.views.generic import TemplateView
 
@@ -26,27 +27,27 @@ class BasketView(LoginRequiredMixin, TemplateView):
         # Get item IDs from basket, store in item_ids variable
         item_ids = [item["id"] for item in basket]
 
-        # Create list of stock products values
-        products = []
+        # Create list for context
+        products_ctx = []
         try:
-            products = list(Product.objects.filter(
-                id__in=item_ids).values("id", "name", "price", "image", "quantity"))
+            products = Product.objects.filter(
+                id__in=item_ids)
         except Product.DoesNotExist:
             pass
 
-        if len(products) > 0:
-            for product in products:
-                # Cast decimal to string for render
-                product["price"] = str(product["price"])
-                for index, item in enumerate(basket):
-                    if product["id"] == item["id"]:
-                        # Available quantities of stock items check
-                        product["max_quantity"] = product["quantity"]
-                        if product["max_quantity"] >= item["quantity"]:
-                            product["quantity"] = item["quantity"]
-                        else:
-                            item["quantity"] = product["max_quantity"]
-        context["products"] = products
+        for product in products:
+            for index, item in enumerate(basket):
+                product_ctx_item = {}
+                if product.id == item["id"]:
+                    product_ctx_item = model_to_dict(product)
+                    # Cast decimal to string for render
+                    product_ctx_item["price"] = str(product.price)
+                    # Available quantities of stock items check
+                    product_ctx_item["max_quantity"] = product.quantity
+                    if not product.sufficient_stock(item["quantity"]):
+                        product_ctx_item["quantity"] = product_ctx_item["max_quantity"]
+                    products_ctx.append(product_ctx_item)
+        context["products"] = products_ctx
         return context
 
 
