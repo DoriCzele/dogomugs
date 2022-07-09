@@ -43,6 +43,7 @@ class BasketView(LoginRequiredMixin, TemplateView):
                     # Cast decimal to string for render
                     product_ctx_item["price"] = str(product.price)
                     # Available quantities of stock items check
+                    product_ctx_item["quantity"] = item["quantity"]
                     product_ctx_item["max_quantity"] = product.quantity
                     if not product.sufficient_stock(item["quantity"]):
                         messages.warning(
