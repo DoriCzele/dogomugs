@@ -1,12 +1,14 @@
 from django.contrib import auth, messages
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
+from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
-
+from django.urls import reverse_lazy
+from accounts.mixins import AnonymousUserRequiredMixin
+from django.views.generic import FormView
 from accounts.forms import RegisterForm
 
 
-def register(request):
+class RegisterFormView(AnonymousUserRequiredMixin, FormView):
     """View to handle user registration form submission.
 
     Page only visible to non-authenticated users.
@@ -17,23 +19,21 @@ def register(request):
     - Log the user in
     - Redirect to homepage
     """
-    if request.user.is_authenticated:
-        messages.error(
-            request, "You are already logged in.")
-        return redirect("home")
-    form = RegisterForm()
-    if request.method == "POST":
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            messages.success(
-                request, "Registration successful!")
-            auth.login(request, user)
-            return redirect("home")
-    return render(request, "register.html", {"form": form})
+
+    template_name = "register.html"
+    form_class = RegisterForm
+    success_url = reverse_lazy("home")
+
+    def form_valid(self, form):
+        """Save user model instance, log the user in and trigger toast message."""
+        user = form.save()
+        auth.login(self.request, user)
+        messages.success(
+            self.request, f"Account created, welcome {user.username}!")
+        return super().form_valid(form)
 
 
-def login(request):
+class LoginFormView(AnonymousUserRequiredMixin, FormView):
     """View to handle user login form submission.
 
     Page only visible to non-authenticated users.
@@ -44,25 +44,19 @@ def login(request):
     - Log the user in
     - Redirect to homepage
     """
-    if request.user.is_authenticated:
-        messages.error(
-            request, "You are already logged in.")
-        return redirect("home")
-    form = AuthenticationForm()
-    if request.method == "POST":
-        form = AuthenticationForm(request=request, data=request.POST)
-        if form.is_valid():
-            user = auth.authenticate(
-                request,
-                username=form.cleaned_data.get("username"),
-                password=form.cleaned_data.get("password"),
-            )
-            if user is not None:
-                auth.login(request, user)
-                messages.success(
-                    request, "Welcome back!")
-                return redirect("home")
-    return render(request, "login.html", {"form": form})
+    template_name = "login.html"
+    form_class = AuthenticationForm
+    success_url = reverse_lazy("home")
+
+    def form_valid(self, form):
+        """Log the user in and trigger toast message."""
+        user = authenticate(
+            username=form.cleaned_data["username"],
+            password=form.cleaned_data["password"]
+        )
+        auth.login(self.request, user)
+        messages.success(self.request, f"Welcome back {user.username}!")
+        return super().form_valid(form)
 
 
 def logout(request):
