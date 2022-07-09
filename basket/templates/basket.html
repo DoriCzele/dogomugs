@@ -22,7 +22,7 @@
           <!-- Quantity number selector -->
           <td><input class="form-control qty-input-field" type="number" min="0" max="{{ product.max_quantity }}"
               name="quantity-product-{{product.id}}" value="{{ product.quantity }}"></td>
-          <td><i class="fa-solid fa-trash btn" id="delete-product-{{product.id}}" aria-label="Delete product"></i></td>
+          <td><i class="fa-solid fa-trash btn" id="delete-product-{{product.id}}"  aria-hidden="true" title="Remove product"></i></td>
           <td>£ {{ product.price }}</td>
         </tr>
         {% endfor %}
@@ -39,7 +39,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-10 col-sm-6 offset-md-4 col-md-4 offset-xl-6 col-xl-3">
-      <a type="button" class="btn btn-primary w-100 my-1" href="{% url 'product-list' %}" rel="noopener"
+      <a class="btn btn-primary w-100 my-1" href="{% url 'product-list' %}" rel="noopener"
       aria-label="Keep shopping">Keep shopping</a>
     </div>
     <div class="col-xs-10 col-sm-6 col-md-4 col-xl-3">

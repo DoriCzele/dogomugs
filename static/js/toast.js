@@ -1,3 +1,7 @@
+/**
+ * Adapted from Bootstrap's instantiation script: https://getbootstrap.com/docs/5.0/components/toasts/#usage
+ * Create a HTML toast element for every pending Django message.
+ */
 window.addEventListener("DOMContentLoaded", function(){
 	var toastElList = [].slice.call(document.querySelectorAll('.toast'))
 	const options = {
@@ -7,7 +11,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	};
 	var toastList = toastElList.map(function (toastEl) {
 		const toast = new bootstrap.Toast(toastEl, options);
-		toast.show()
+		toast.show();
 		return toast;
-})
-})
+});
+});

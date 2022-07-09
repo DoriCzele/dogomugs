@@ -1,27 +1,25 @@
 {% load static %}
-
 <div class="card text-center my-5">
     <div class="card-header">   
         <h5 class="text-uppercase my-1 justify-content-center d-flex">Frequently Asked Questions</h5>
     </div>
-        <div class="accordion accordion-flush" id="faqAccordion">
-             {% for question in questions %}
-             <div class="accordion-item">
-                <h2 class="accordion-header" id="heading{{question.id}}">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{question.id}}" aria-expanded="true" aria-controls="collapse{{question.id}}">
-                    {{ question.question }}
-                    </button>
-                </h2>
-                <div id="collapse{{question.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{question.id}}" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <p>{{ question.answer }}</p>
-                    </div>
+    <div class="accordion accordion-flush" id="faqAccordion">
+        {% for question in questions %}
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{question.id}}">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{question.id}}" aria-expanded="true" aria-controls="collapse{{question.id}}">
+                {{ question.question }}
+                </button>
+            </h2>
+            <div id="collapse{{question.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{question.id}}" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <p>{{ question.answer }}</p>
                 </div>
             </div>
-            {% endfor %}
-      </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-
 <p class="text-uppercase justify-content-center d-flex">Still have a question?</p>
 <i class="fa-solid fa-arrow-down justify-content-center d-flex my-1"></i>
 <a href="{% url 'contact' %}" class="text-uppercase my-1 justify-content-center d-flex text-decoration-none contact-us">Contact us!</a>

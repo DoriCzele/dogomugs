@@ -5,7 +5,7 @@
 		<form action="{% url 'product-list' %}" method="get" class="d-flex my-2">
 			<input name="search" class="form-control me-2 " type="search" placeholder="Search" aria-label="Search"
 				value="{{ request.GET.search }}">
-			<button class="btn btn-outline-success search-button" type="submit">SEARCH</button>
+			<button class="btn btn-outline-success search-button text-uppercase" type="submit">Search</button>
 		</form>
 	</div>
 </div>
@@ -21,14 +21,14 @@
 						<img src="{{ product.image.url }}" class="card-img-top" alt="Product image">
 					</a>
 				</div>
-						<div class="card-body">
-						<h5>{{ product.name }}</h5>
-						</div>
-						<ul class="list-group list-group-flush">
-			 			<li class="list-group-item">£ {{ product.price }}</li>
-			  			<li class="list-group-item">In stock: {{ product.quantity }}</li>
+					<div class="card-body">
+					<h5>{{ product.name }}</h5>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">£ {{ product.price }}</li>
+						<li class="list-group-item">In stock: {{ product.quantity }}</li>
 					</ul>
-					<a type="button" class="btn btn-primary my-1" href="{% url 'product-detail' pk=product.id %}">PRODUCT DETAILS</a>
+					<a class="btn btn-primary my-1" href="{% url 'product-detail' pk=product.id %}">Product details</a>
 				</div>
 			</div>
 			{% endif %}

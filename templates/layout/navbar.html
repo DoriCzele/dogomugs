@@ -1,19 +1,16 @@
 {% load static %}
-
-
 <!--Navbar -->  
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top d-flex px-3">
   <div class="container-fluid">
     <div class="row">
-    <!--Navbar Logo -->
-    <div class="order-2 col-6 offset-3 col-md-3 offset-md-5 col-lg-3 offset-lg-0 order-lg-1 align-items-center">
-      <a aria-current="page" href="{% url 'home' %}"><img class="w-100 h-100" src="{% static 'img/logo.png' %}"
-          alt="Logo" class="logo"> </a>
-    </div>
-    <!--Navbar burger icon-->
+      <!--Navbar Logo -->
+      <div class="order-2 col-6 offset-3 col-md-3 offset-md-5 col-lg-3 offset-lg-0 order-lg-1 align-items-center">
+        <a aria-current="page" href="{% url 'home' %}"><img class="logo w-100 h-100" src="{% static 'img/logo.png' %}" alt="Logo"> </a>
+      </div>
+      <!--Navbar burger icon-->
       <div class="d-lg-none col-3 order-1 d-flex justify-content-center align-items-center">
         <button class="navbar-toggler w-100 h-100 d-flex justify-content-center align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
@@ -23,17 +20,14 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-uppercase" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              </i>Products
+              Products
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               {% for category in categories%}
               <li><a class="dropdown-item text-uppercase" href="{% url 'product-list' %}?category={{category.id}}">{{category.name}}</a></li>
-                <hr class="dropdown-divider">
                 {% endfor %}
-              </li>
               <li><a class="dropdown-item text-uppercase" href="{% url 'product-list' %}">All products</a></li>
             </ul>
-          </li>
           <li class="nav-item">
             <a class="nav-link text-uppercase no-break" href="{% url 'contact' %}">Contact us</a>
           </li>
@@ -46,6 +40,10 @@
           </li>
           <li class="nav-item">
             <a class="nav-link text-uppercase no-break" href="{% url 'logout' %}" aria-label="Log out">Log out<i class="fa-solid fa-right-from-bracket ms-2"></i></a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link text-uppercase no-break" href="{% url 'login' %}" aria-label="Login">Login</a>
           </li>
           {% endif %}
         </ul>

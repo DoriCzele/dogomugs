@@ -1,11 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 {% if object_list|length > 0 %}
-
 <div class="container my-4 justify-content-center">
-<h2 class="text-uppercase">My orders</h2>
+  <h2 class="text-uppercase">My orders</h2>
 </div>
-
 <div class="container">
   <div class="row">
     {% for order in object_list %}
@@ -21,11 +19,11 @@
                 <li class="list-group-item">{{order.items_quantity}} item</li>
                 {% endif %}
                 {% if order.payment_confirmed %}
-                <li class="list-group-item">Payment status <i class="fa-solid fa-check" aria-label="paid"></i></li>
+                <li class="list-group-item">Payment status <i class="fa-solid fa-check" aria-hidden="true" title="Payment complete"></i></li>
                 {% else %}
-                <li class="list-group-item">Payment status <i class="fa-solid fa-x" aria-label="pending payment"></i></li>
+                <li class="list-group-item">Payment status <i class="fa-solid fa-x" aria-hidden="true" title="Pending payment"></i></li>
                 {% endif %}
-                <a href="{% url 'order-detail' pk=order.id %}" class="btn btn-primary text-uppercase mt-3">Order details</a>
+                <li class="list-group-item"><a href="{% url 'order-detail' pk=order.id %}" class="btn btn-primary text-uppercase mt-3">Order details</a></li>
               </ul>
         </div>
       </div>

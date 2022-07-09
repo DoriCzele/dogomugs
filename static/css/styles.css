@@ -29,11 +29,11 @@ body {
     font-size: 1.7rem;
     padding: 0.4rem;
     transition: all .5s ease;
-  }
+}
 
 .footer a :hover {
-    color: #E07A5F ;
-  }
+    color: #E07A5F;
+}
 
 /*Product preview card styling */
 .product-card {
@@ -45,9 +45,9 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width:25rem
+    max-width: 25rem
 }
- 
+
 /*Product details card styling */
 .details-card {
     margin-top: 5%;
@@ -73,9 +73,9 @@ body {
 }
 
 .search-button:hover {
-    color: #ffff; 
-    background-color: #E07A5F ; 
-  } 
+    color: #ffff;
+    background-color: #E07A5F;
+}
 
 #save-button {
     display: none;
@@ -96,7 +96,7 @@ p {
     width: 100%;
 }
 
-.form-container{
+.form-container {
     width: 70%;
 }
 
@@ -106,7 +106,7 @@ p {
     width: 80%;
 }
 
-.shopping-bag-container{
+.shopping-bag-container {
     margin-top: 5%;
 }
 
@@ -115,7 +115,7 @@ p {
     font-size: 1.7rem;
     font-weight: 600;
     color: #000000;
- } 
+}
 
 .contact-us:hover {
     color: #E07A5F;
@@ -135,13 +135,13 @@ p {
 }
 
 /*Welcome container styling*/
-.welcome-message{
-    font-size: 3rem ;
+.welcome-message {
+    font-size: 3rem;
     font-family: 'Lobster', cursive;
     color: #E07A5F;
 }
 
-.welcome-container{
+.welcome-container {
     margin: auto;
     text-align: center;
 }
@@ -153,49 +153,49 @@ p {
     box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 }
 
-.card-header{
-background-color:#3D405B;
-color: #ffff;
+.card-header {
+    background-color: #3D405B;
+    color: #ffff;
 }
 
 /*Icons styling*/
 
-.fa-trash{
- color: #bb5353;
+.fa-trash {
+    color: #bb5353;
 }
 
-.fa-right-from-bracket{
-    font-size: 1.3rem; 
+.fa-right-from-bracket {
+    font-size: 1.3rem;
 }
 
 .fa-right-from-bracket:hover {
-    color: #E07A5F ; 
-  } 
+    color: #E07A5F;
+}
 
-.fa-basket-shopping{
+.fa-basket-shopping {
     font-size: 1.3rem;
 }
 
 .fa-basket-shopping:hover {
-    color: #E07A5F ; 
-  } 
+    color: #E07A5F;
+}
 
 
-.fa-solid{
+.fa-solid {
     color: #3D405B;
 }
 
-.fa-envelope-circle-check{
-    color: #3D405B;
-    font-size: 5rem;
-}
-
-.fa-circle-check{
+.fa-envelope-circle-check {
     color: #3D405B;
     font-size: 5rem;
 }
 
-.fa-check{
+.fa-circle-check {
+    color: #3D405B;
+    font-size: 5rem;
+}
+
+.fa-check {
     color: #33a633;
 }
 
@@ -203,15 +203,15 @@ color: #ffff;
     color: #bb5353;
 }
 
-.fa-arrow-down{
+.fa-arrow-down {
     font-size: 2rem;
 }
 
 .fa-brands {
-    color:  #ffff;
+    color: #ffff;
     transition-duration: 0.3s;
 }
 
-.fa-linkedin :hover{
+.fa-linkedin :hover {
     background-color: #E07A5F;
 }

@@ -3,12 +3,9 @@
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
-
-
 <div class="container justify-content-center">
 	<h3 class="text-center my-3">CUSTOMER DETAILS</h3>
 </div>
-
 <!--Shipping form-->
 <div class="container">
 	<div class="row">
@@ -17,8 +14,8 @@
 		</div>
 		<div class="col-md-6">
 		<form method="POST">
-		{% csrf_token %}
-		{{ form|crispy }}
+			{% csrf_token %}
+			{{ form|crispy }}
 			<div class="d-flex float-end">
 			<button type="submit" class="btn btn-primary mt-2 mb-2">Submit</button>
 			</div>
@@ -26,5 +23,4 @@
 		</div>
 	</div>
 </div>
-
 {% endblock %}

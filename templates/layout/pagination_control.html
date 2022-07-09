@@ -1,13 +1,13 @@
 <div class="pagination justify-content-center my-1">
 	<span class="step-links">
 		{% if page_obj.has_previous %}
-		<a href="?page={{ page_obj.previous_page_number }}"><i class="fa-solid fa-circle-arrow-left" aria-label="left arrow"></i></a>
+		<a href="?page={{ page_obj.previous_page_number }}"><i class="fa-solid fa-circle-arrow-left" aria-hidden="true"></i></a>
 		{% endif %}
 		<span class="current">
 			{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
 		</span>
 		{% if page_obj.has_next %}
-		<a href="?page={{ page_obj.next_page_number }}"><i class="fa-solid fa-circle-arrow-right" aria-label="right arrow"></i></a>
+		<a href="?page={{ page_obj.next_page_number }}"><i class="fa-solid fa-circle-arrow-right" aria-hidden="true"></i></a>
 		{% endif %}
 	</span>
 </div>

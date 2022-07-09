@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-
-
 <div class="card mb-3 container justify-content-center">
     <div class="row">
         <div class="d-none d-md-block col-md-6">
@@ -36,7 +34,6 @@
         <p class="my-3 d-flex justify-content-center"><a href="{% url 'payment' order_id=orderdetails.id %}" class="btn btn-primary text-uppercase">Continue payment</a></p>
             {% endif %}
         <p class="my-3 d-flex justify-content-center"><a href="{% url 'order-list' %}" class="btn btn-primary text-uppercase">Back to all orders</a></p>
-        </div>
+    </div>
 </div>
-
 {% endblock %}

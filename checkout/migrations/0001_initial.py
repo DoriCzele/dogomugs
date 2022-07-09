@@ -18,7 +18,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ShippingAddress',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('full_name', models.CharField(max_length=100)),
                 ('primary_address', models.CharField(max_length=50)),
                 ('secondary_address', models.CharField(max_length=50)),
@@ -27,7 +28,8 @@ class Migration(migrations.Migration):
                 ('postcode', models.CharField(max_length=10)),
                 ('country', models.CharField(max_length=50)),
                 ('phone_number', models.CharField(max_length=20)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('user', models.OneToOneField(
+                    on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name_plural': 'Shipping Addresses',
@@ -36,12 +38,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='OrderItems',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('quantity', models.PositiveIntegerField()),
                 ('price', models.DecimalField(decimal_places=2, max_digits=5)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
-                ('product', models.OneToOneField(on_delete=django.db.models.deletion.PROTECT, to='products.product')),
+                ('product', models.OneToOneField(
+                    on_delete=django.db.models.deletion.PROTECT, to='products.product')),
             ],
             options={
                 'verbose_name_plural': 'Orders Items',
@@ -50,14 +54,19 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='OrderDetails',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('total_price', models.DecimalField(decimal_places=2, max_digits=8)),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
+                ('total_price', models.DecimalField(
+                    decimal_places=2, max_digits=8)),
                 ('items_quantity', models.IntegerField()),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
-                ('items', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkout.orderitems')),
-                ('shipping_address', models.OneToOneField(null=True, on_delete=django.db.models.deletion.SET_NULL, to='checkout.shippingaddress')),
-                ('user', models.OneToOneField(null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL)),
+                ('items', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='checkout.orderitems')),
+                ('shipping_address', models.OneToOneField(
+                    null=True, on_delete=django.db.models.deletion.SET_NULL, to='checkout.shippingaddress')),
+                ('user', models.OneToOneField(
+                    null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name_plural': 'Orders Details',
