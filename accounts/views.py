@@ -2,7 +2,7 @@ from django.contrib import auth, messages
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from accounts.mixins import AnonymousUserRequiredMixin
 from django.views.generic import FormView
 from accounts.forms import RegisterForm
@@ -46,7 +46,13 @@ class LoginFormView(AnonymousUserRequiredMixin, FormView):
     """
     template_name = "login.html"
     form_class = AuthenticationForm
-    success_url = reverse_lazy("home")
+
+    def get_success_url(self):
+        success_url = self.request.GET.get("next")
+        if success_url is not None:
+            return success_url
+        success_url = "home"
+        return reverse(success_url)
 
     def form_valid(self, form):
         """Log the user in and trigger toast message."""
