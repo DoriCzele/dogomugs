@@ -5,6 +5,27 @@
   - [Table of contents](#table-of-contents)
   - [**Validation across site**](#validation-across-site)
   - [**Responsiveness across site**](#responsiveness-across-site)
+  - [**Lighthouse Report**](#lighthouse-report)
+    - [**Home desktop**](#home-desktop)
+    - [**Home mobile**](#home-mobile)
+    - [**Basket desktop**](#basket-desktop)
+    - [**Basket mobile**](#basket-mobile)
+    - [**Contact us desktop**](#contact-us-desktop)
+    - [**Contact us mobile**](#contact-us-mobile)
+    - [**Login desktop**](#login-desktop)
+    - [**Login mobile**](#login-mobile)
+    - [**Register desktop**](#register-desktop)
+    - [**Register mobile**](#register-mobile)
+    - [**My Orders desktop**](#my-orders-desktop)
+    - [**My Orders mobile**](#my-orders-mobile)
+    - [**Order Details desktop**](#order-details-desktop)
+    - [**Order Details mobile**](#order-details-mobile)
+    - [**Products desktop**](#products-desktop)
+    - [**Products mobile**](#products-mobile)
+    - [**Product Details desktop**](#product-details-desktop)
+    - [**Product Details mobile**](#product-details-mobile)
+    - [**Shipping desktop**](#shipping-desktop)
+    - [**Shipping mobile**](#shipping-mobile)
   - [**Base**](#base)
   - [**Home page**](#home-page)
   - [**Products page**](#products-page)
@@ -17,14 +38,97 @@
   - [**Contact Us page**](#contact-us-page)
 
 ## **Validation across site**
-All the html files checked and passed without any issue through the [HTML Validator](https://validator.w3.org/).  
-All the css files checked and passed without any issue through the [CSS Validator](https://jigsaw.w3.org/css-validator/).  
-All the javascript files are checked and passed without any issue through the [Javascript Validator](https://jshint.com/).
-All python files checked and formatted without any issue through the [PEP8](http://pep8online.com/). 
+All the html files checked and passed without any issue through [HTML Validator](https://validator.w3.org/).  
+All the css files checked and passed without any issue through [CSS Validator](https://jigsaw.w3.org/css-validator/).  
+All the javascript files are checked and passed without any issue through [Javascript Validator](https://jshint.com/).  
+All python files checked and formatted without any issue through [PEP8](http://pep8online.com/). 
 
 ## **Responsiveness across site**
 Tested and passed on various devices and displays: mobile, tablet and desktop.
 Tested and passed across various browsers: Google Chrome, Safari, Firefox.
+
+## **Lighthouse Report**
+### **Home desktop**
+
+![Home](../docs/lighthouse_reports/home_desktop.png)
+
+### **Home mobile**
+
+![Home](../docs/lighthouse_reports/home_mobile.png)
+
+### **Basket desktop**
+
+![Basket](../docs/lighthouse_reports/basket_desktop.png)
+
+### **Basket mobile**
+
+![Basket](../docs/lighthouse_reports/basket_mobile.png)
+
+### **Contact us desktop**
+
+![Contact us](../docs/lighthouse_reports/contactus_desktop.png)
+
+### **Contact us mobile**
+
+![Contact us](../docs/lighthouse_reports/contactus_mobile.png)
+
+### **Login desktop**
+
+![Login](../docs/lighthouse_reports/login_desktop.png)
+
+### **Login mobile**
+
+![Login](../docs/lighthouse_reports/login_mobile.png)
+
+### **Register desktop**
+
+![Register](../docs/lighthouse_reports/register_desktop.png)
+
+### **Register mobile**
+
+![Register](../docs/lighthouse_reports/register_mobile.png)
+
+### **My Orders desktop**
+
+![My Orders](../docs/lighthouse_reports/myorders_desktop.png)
+
+### **My Orders mobile**
+
+![My Orders](../docs/lighthouse_reports/myorders_mobile.png)
+
+### **Order Details desktop**
+
+![Order Details](../docs/lighthouse_reports/orderdetails_desktop.png)
+
+### **Order Details mobile**
+
+![Order Details](../docs/lighthouse_reports/orderdetails_mobile.png)
+
+### **Products desktop**
+
+![Products](../docs/lighthouse_reports/productlist_desktop.png)
+
+### **Products mobile**
+
+![Products](../docs/lighthouse_reports/productlist_mobile.png)
+
+### **Product Details desktop**
+
+![Product Details](../docs/lighthouse_reports/productdetails_desktop.png)
+
+### **Product Details mobile**
+
+![Product Details](../docs/lighthouse_reports/productdetails_mobile.png)
+
+### **Shipping desktop**
+
+![Shipping](../docs/lighthouse_reports/shipping_desktop.png)
+
+### **Shipping mobile**
+
+![Shipping](../docs/lighthouse_reports/shipping_mobile.png)
+
+
 
 ## **Base**
 
