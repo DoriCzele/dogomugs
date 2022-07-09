@@ -13,9 +13,9 @@ The website's user-friendly and easy-to-access layout provides a simple and fun 
 
 Thank you for visiting!
 
-Should you have any questions regarding my project feel free to reach out to me via the provided GitHub contact details.  
+Should you have any questions regarding my project feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/dorottya-czele-4b739115a/).
 
-At the time of submission of this project the deployed version is identical to the latest development version of the "main" branch.  
+At the time of submission of this project the deployed version is identical to the latest development version of the "main" branch.
 
 ## Table of contents 
 - [**Dog O Mugs**](#dog-o-mugs)
@@ -75,7 +75,6 @@ At the time of submission of this project the deployed version is identical to t
 * A fully responsive website that is accessible and easy to use on desktop, tablet & mobile.
 * Appealing, modern and clear design.
 * Visibility of products in my basket, and an easy way to edit, delete or pay for these items.
-* Providing option to share products on social media.
 * Direct links to social media sites.
 
 ### User Stories
@@ -84,42 +83,40 @@ Key requirements of site users:
 
 * As a new user, I want to be able to create my own account.
 * As an existing user, I want to be able to log in to my account.
-* As an existing user, I want to be able to update my account details if required.
-* As a user, I want the navigation links work properly.
+* As a user, I want the navigation links to work.
 * As a user browsing products, I want to be able to easily navigate on the products page.
 * As a user interested in a particular product or design, I want to be able to search for items.
 * As a user interested in the business, I want to be able to find information about the company.
-* As a user purchasing an item, I want to be able to see the content of my basket, alter quantities or remove products from my cart.
+* As a user purchasing an item, I want to be able to see the contents of my basket, alter quantities or remove products from my basket.
 * As a user, I want the correct total price displayed in the basket before checkout.
 * As a user finalising a purchase, I want to be able to provide my shipping information.
 * As a user finalising a purchase, I want to be able to securely pay for my purchase.
-* As a user with finalised purchase I want to be able to view my ordered products.
-* As a user, I want to be able to share Dog O Mugs on social media.
-* As a user, I want my details kept confident at all times.
+* As a user with a finalised purchase I want to be able to view my ordered products.
+* As a user, I want my details kept confidential at all times.
 * As a user, I want external links to open in a new window.
-
 
 
 ### Site owners Goals
 
 * As a site owner, I want to promote my products the best way possible to attract new customers.
-* As a site owner, I want to increase profit by reaching a wider audience.
-* As a site owner, I want to be able to overview and process orders.
+* As a site owner, I want an overview of orders.
 * As a site owner, I want to be able to provide customers with an easily accessible clear e-commerce site with a simple flow to increase user experience while shopping.
-* As a site owner, I want new customers to be able to register and create an account.
+* As a site owner, I want new customers to be able to independently register and create an account.
 * As a site owner, I want existing customers to be able to return and log into their account.
 * As a site owner, I want information about the company and products to be available for customers.
 * As a site owner, I want customers to be able to contact us through the website.
 * As a site owner, I want to be able to review and update stock levels through the admin site.
 * As a site owner, I want to be able to add new products through the admin site.
-* As a site owner, I want to be able to modify existing product name, description or price through the admin site.
+* As a site owner, I want to be able to modify existing product names, descriptions or prices through the admin site.
 * As a site owner, I want the payment system to be secure and reliable.
 
 [Back to Top](#table-of-contents)
 
 ### Design Choices
 
-The website's main functionality is to sell mugs and bottles featuring designs of dogs. The design choices are clear and simple directing the user's attention to the products. The website is featuring some bold colours while keeping the flow clear and simple for customers. 
+The website's main functionality is to sell mugs and bottles featuring designs of dogs. The design choices are clear and simple directing the user's attention to the products. The website features some bold colours while keeping the flow clear and simple for customers.  
+
+All images and styles are stored on [AWS](https://www.aws.com/).
 
 ### Colours
 
@@ -150,8 +147,7 @@ Fav icons are created via [Favicon](https://favicon.io/favicon-generator/)
 Images used from:
 * [Pexel](https://www.pexels.com)
 * [Stock Vault](https://www.stockvault.net)
-* [Unsplash](https://unsplash.com)
-
+* [Unsplash](https://unsplash.com)  
 
 ### Wireframes
 #### Desktop Wireframes
@@ -229,7 +225,7 @@ The carousel image showcases some of the products to peak customers' interest. W
 
 ### **Products page**
 
-On the Products page6 products are listed per page in individual cards containing basic information of the product such as image of the product, product name, price, and current stock.  
+On the Products page 6 products are listed per page in individual cards containing basic information of the product such as image of the product, product name, price, and current stock.  
 A search bar is integrated in the top of the page to enable user to search for names of products that are currently in stock.  
 By clicking the "Products" navbar item a drop down menu opens where the existing product categories are listed to make filtering and finding products more simple. 
 By clicking the "Product Details" button the customer is redirected to the detailed product view where a detailed description is visible with the option to add item to the basket or return to the "Products" page. When clicking on the "Add to basket" button user is redirected to the Basket.
@@ -238,11 +234,11 @@ User can only add item to the cart while logged in, in other case they are redir
 ### **Basket page**
 
 Basket is only visible while user is logged in.
-If the basket is empty, a "You have no items in your basket!" message appears and a link to the products.  
+If the basket is empty, a "You have no items in your basket!" message appears with a link to the products page.  
 If there are items in the basket, these are all listed with information about the product name, quantity, price per item and the total is visible on the bottom of the list.  
 The customer has the option to update product quantity or remove item from the basket by adjusting the quantity/pressing delete button then confirming the change by clicking on the "save changes" button.  
 The customer has the option to either keep shopping and return to the product page or proceed to checkout.  
-On checkout the user is directed to the shipping page where customer details can be entered. Once the form is submitted user is redirected to Stripe Checkout where after entering payment details the transaction happening. On successful payment the user is redirected to the payment success page to confirm this.
+On checkout the user is directed to the shipping page where customer details can be entered. Once the form is submitted user is redirected to Stripe Checkout where after entering payment details the transaction occurs. On successful payment the user is redirected to the payment success page to confirm this.
 
 ### **My Orders page**
 
@@ -338,8 +334,8 @@ Testing is available in [TESTING.md](./TESTING.md).
 
 ## **Local Deployment**
 
-To create this project I have used VS Code. 
-After each separate section of code I added commits to myGithub repository.
+To create this project I have used VSCode. 
+After each separate section of code I added commits to my Github repository.
 
 In order to be able to run this project locally, follow these steps:
 
@@ -379,7 +375,60 @@ Admin panel is accessible by adding /admin to the end of the local address. Use 
 
 ## **Heroku Deployment**
 
-For this project a Stripe account (for payments) is necessary to create as well as an AWS where the static media files are stored for his project. 
+For this project a Stripe account (for payments) is necessary to create as well as an AWS where the static media files are stored for his project.
+
+For setting up an AWS bucket see [AWS S3 documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html).
+
+Create a requirements.txt file populated by required python modules:
+```
+pip freeze > requirements.txt
+```
+
+Create a Procfile with the following or use the existing in this repo:
+```web: gunicorn dogomugs.wsgi:application```
+
+Ensure both the requirements and Procfile are committed to the remote repo.
+
+Open https://dashboard.heroku.com/apps in your browser and sign in.
+Create a new app by selecting "New" on the dashboard.
+Name for the app and choose the app region.
+
+Select the "Deployment" tab of the new app > "Deployment Method" > "GitHub".
+Search for your repository from the list select the target repository.
+
+
+In the app dashboard, select "Settings" > "Reveal Config Vars".
+Populate the config variables table with the following:
+
+| Config Key            | Config Value                                     |
+| --------------------- | -------------------------------------------------|
+| AWS_ACCESS_KEY_ID     | `Your AWS Access Key`                            |
+| AWS_SECRET_ACCESS_KEY | `Your AWS Secret Access Key`                     |
+| DATABASE_URL          | `Your Database URL`                              |
+| DISABLE_COLLECTSTATIC | `1`                                              |
+| SECRET_KEY            | `Your Django Secret Key`                         |
+| STRIPE_KEY            | `Your Stripe Secret Key`                         |
+
+(The DATABASE_URL should be automatically applied by adding the Heroku Postgres addon in the Resources tab).
+
+
+Make migrations and migrate the database models to the postgreSQL database by running these commands in the Heroku console ("More" > "Run console")
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+Collect your app's static files (stored in the AWS S3 bucket) by running the following in the Heroku console:
+```
+python manage.py collectstatic
+```
+
+
+In the Heroku app dashboard, select the "Deploy" tab. Scroll down to "Manual Deploy", select the master branch and select "Deploy Branch".
+
+The build progress can be monitored in the log for the Heroku application, upon build completion, select the "Open App" button to view the deployed application.
+
 
 ## **Credits**
 
